@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Tian-Yuan Zhao</title>
+
+	<!-- paper-kit -->
+	<link href="libraries/paper/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="libraries/paper/css/paper-kit.css?v=2.1.0" rel="stylesheet"/>
+  <link href="libraries/paper/css/demo.css" rel="stylesheet" />
+
+  <!--     Fonts and icons     -->
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href="libraries/paper/css/nucleo-icons.css" rel="stylesheet">
+
+	<!-- p5 -->
+	<script src="libraries/p5/p5.js"></script>
+	<script src="libraries/p5/p5.dom.js"></script>
+	<script src="particle.js"></script>
+	<script src="sketch.js"></script>
+
+	<link rel="stylesheet" href="libraries/css/master.css">
+	<link rel="stylesheet" href="libraries/animate/animate.css">
+
+	<link rel="icon" type="image/png" href="assets/images/man.png"/>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="libraries/scripts/headerEffect.js"></script>
+	<script src="libraries/scripts/medium.js"></script>
+	<script src="libraries/scripts/master.js"></script>
+	<style>
+		.filter {
+			display: none;
+		}
+
+		.show {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<!-- Header -->
+	<header class="nav-down" style="width: min-width; font-size: 18px; color: black; z-index: 2; z-index: 100;">
+			<a href="#work" style="margin-left:20px;" class="menu"><strong>Work</strong></a>
+			<a href="#skills" class="menu"><strong>Skills</strong></a>
+			<a href="#about" class="menu"><strong>About</strong></a>
+			<a href="#contact" style="margin-right: 20px" class="menu"><strong>Contact</strong></a>
+  </header>
+	<!-- Header Ends -->
+
+	<!-- Recent/Helighted/TagLine -->
+	<div id="recent">
+		<!-- <div class="animated lightSpeedIn" style="height: 90vh; padding-top: 42px; display: block; overflow: auto;">
+			<div class="card card-profile" id="tag-line" style="background: white;">
+		   <div class="card-avatar">
+		       <a href="https://medium.com/@tosfan4ever" target="_blank">
+		           <img src="assets/images/zhao.jpeg" alt="..." style="border-radius: 25px">
+		       </a>
+		   </div>
+		   <div class="card-body">
+		       <h4 class="card-title">Tian-Yuan Zhao</h4>
+		       <h6 class="card-category">UI/UX Designer</h6>
+		       <p class="card-description">
+		       	I make heavenly UX come alive thus enabling greater wealth for U & I.
+		       </p>
+		   </div>
+			</div>
+		</div> -->
+		<div onmousemove="animateElements(event)" onmouseout="resetLocation()" style = "height: 90vh; width: 100%;position: relative;">
+			<svg id="pp" class="center-div" style="position: absolute; top: 10%;" xmlns = "http://www.w3.org/2000/svg" height = "600px" width = "300px" style="z-index: 0;">
+				<path class = "anime" d = "M5,5 L5,594.5 L294.5,594.5 L294.5,5 L5,5" stroke = "#000" stroke-width = "10" fill = "none" style = "transition: stroke-dashoffset 10s ease-in-out; stroke-dasharray: 456.155, 456.155; stroke-dashoffset: -5;"></path>
+				<path class = "anime" d = "M50,50 L270,50 L270,570 L50,570 L50,50" stroke = "#000" stroke-width = "10" fill = "none" style = "transition: stroke-dashoffset 10s ease-in-out; stroke-dasharray: 456.155, 456.155; stroke-dashoffset: -5;"></path>
+				<circle class="anime" cx="100" cy="300" r="40" stroke="black" stroke-width="10" fill="none" />
+			</svg>
+			<div class="card card-profile" id="tag-line" style="background: white;">
+		   <div class="card-avatar">
+		       <a href="https://medium.com/@tosfan4ever" target="_blank">
+		           <img src="assets/images/zhao.jpeg" alt="..." style="border-radius: 25px">
+		       </a>
+		   </div>
+		   <div class="card-body">
+		       <h4 class="card-title">Tian-Yuan Zhao</h4>
+		       <h6 class="card-category">UI/UX Designer</h6>
+		       <p class="card-description">
+		       	I make heavenly UX come alive thus enabling greater wealth for U & I.
+		       </p>
+		   </div>
+			</div>
+		</div>
+	</div>
+	<!-- Recent/Helighted/TagLine Ends -->
+
+	<!-- Lead Down -->
+	<div id="lead-down" style="height: 10vh; display: block;">
+    <span>
+			<a href="#work">
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+			</a>
+    </span>
+  </div>
+	<!-- Lead Down Ends -->
+
+	<!-- Work -->
+	<div id="work">
+
+		<!-- Work Navigation -->
+		<ul id="work-nav" class="nav nav-pills nav-pills-info center-div" style="background: rgb(255,252,244); border-radius: 50px; z-index: 2;">
+			<li class="nav-item">
+ 		     <a id="work-nav-link" onclick="filterSelection('all')" class="nav-link active" data-toggle="pill" href="#all" role="tab">All</a>
+ 		 </li>
+		 <li class="nav-item">
+		     <a id="work-nav-link" onclick="filterSelection('project')" class="nav-link" data-toggle="pill" href="#projects" role="tab">Projects</a>
+		 </li>
+		 <li class="nav-item">
+		     <a id="work-nav-link" onclick="filterSelection('side-hustle')" class="nav-link" data-toggle="pill" href="#side-hustles" role="tab">Side-Hustles</a>
+		 </li>
+		 <li class="nav-item">
+		     <a id="work-nav-link" onclick="filterSelection('presentation')" class="nav-link" data-toggle="pill" href="#presentations" role="tab">Presentations</a>
+		 </li>
+		 <li class="nav-item">
+		     <a id="work-nav-link" onclick="filterSelection('medium')" class="nav-link" data-toggle="pill" href="#medium" role="tab">Medium</a>
+		 </li>
+	 </ul>
+	 <!-- Work Navigation -->
+
+	 <!-- Work Cards -->
+	 <div id="work-cards" style="width: 100%; padding-top: 70px; padding-left: 5%; padding-right: 5%;">
+
+		 <!-- Cards -->
+		 <div class="animated zoomIn responsive filter side-hustle">
+		   <div class="gallery">
+		 		<a id="2" href="https://www.maropost.com/" target="_blank">
+		 			<div class="card card-profile work-card-profile">
+		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/maropost.png');">
+		 				 </div>
+		 				 <div class="card-body work-card-body">
+		 						 <h4 class="card-title">Maropost</h4>
+		 						 <h6 class="current">Current Project</h6>
+		 						 <p class="card-description">
+		 							 Maropost is a swiss-army knife of sales and marketing tools with their Marketing Cloud (MMC) being an all-inclusive set of digital marketing tools and their Sales Cloud (MSC) being an all-inclusive set of digital sales tools.
+		 						 </p>
+		 				 </div>
+		 			 </div>
+		 		 </a>
+		   </div>
+		 </div>
+			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter side-hustle">
+			<div class="gallery">
+			 <a href="https://marvelapp.com/4gb7d21/screen/38950262" target="_blank">
+				 <div class="card card-profile work-card-profile">
+						<div class="card-cover" style="height: 200px; background-image: url('assets/images/cryptoCanucks.png');">
+						</div>
+						<div class="card-body work-card-body">
+								<h4 class="card-title">CryptoCanucks</h4>
+								<h6 class="current">Current Project</h6>
+								<p class="card-description">
+									I'm a part-time freelance gig there. Crypto Canucks provide one of the best initial coin offer.
+								</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			</div>
+			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter side-hustle">
+ 		   <div class="gallery">
+ 		 		<a href="http://theblockchainhub.com/cbd" target="_blank">
+ 		 			<div class="card card-profile work-card-profile">
+ 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/blockchainHub.jpg');">
+ 		 				 </div>
+ 		 				 <div class="card-body work-card-body">
+ 		 						 <h4 class="card-title">BlockchainHub</h4>
+ 		 						 <h6 class="current">Current Project</h6>
+ 		 						 <p class="card-description">
+ 		 							 I’ll be the lead instructor of their. This program will guide the candidates through the concepts of blockchain technology, cryptoeconomics, and product design (UX).
+ 		 						 </p>
+ 		 				 </div>
+ 		 			 </div>
+ 		 		 </a>
+ 		   </div>
+ 		 </div>
+ 			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter side-hustle">
+ 		   <div class="gallery">
+ 		 		<a target="_blank">
+ 		 			<div class="card card-profile work-card-profile">
+ 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/default.jpg');">
+ 		 				 </div>
+ 		 				 <div class="card-body work-card-body">
+ 		 						 <h4 class="card-title">Silly Valley</h4>
+ 		 						 <h6 class="coming-soon">Coming Soon</h6>
+ 		 						 <p class="card-description">
+ 		 							 A side project all about satirizing the tech/startup worlds. I'll be one of the team member there.
+ 		 						 </p>
+ 		 				 </div>
+ 		 			 </div>
+ 		 		 </a>
+ 		   </div>
+ 		 </div>
+ 			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter side-hustle">
+ 		   <div class="gallery">
+ 		 		<a target="_blank">
+ 		 			<div class="card card-profile work-card-profile">
+ 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/default.jpg');">
+ 		 				 </div>
+ 		 				 <div class="card-body work-card-body">
+ 		 						 <h4 class="card-title">UXelerate</h4>
+ 		 						 <h6 class="coming-soon">Coming Soon</h6>
+ 		 						 <p class="card-description">
+ 		 							 A side project that’s similar to Whitespace but for Canada. I'll be one of the team member there.
+ 		 						 </p>
+ 		 				 </div>
+ 		 			 </div>
+ 		 		 </a>
+ 		   </div>
+ 		 </div>
+ 			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter presentation">
+ 		   <div class="gallery">
+ 		 		<a href="http://2018.podcamptoronto.com/sessions/circular-design-economy-blockchain/" target="_blank">
+ 		 			<div class="card card-profile work-card-profile">
+ 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/podCamp2018.png');">
+ 		 				 </div>
+ 		 				 <div class="card-body work-card-body">
+ 		 						 <h4 class="card-title">PodCamp 2018</h4>
+ 		 						 <h6 class="coming-soon">Coming Soon</h6>
+ 		 						 <p class="card-description">
+ 		 							 Here I’ll talk about the intersection of Circular Design/Economy and Blockchain, 2 subject matters that I believe to be naturally linked.
+ 		 						 </p>
+ 		 				 </div>
+ 		 			 </div>
+ 		 		 </a>
+ 		   </div>
+ 		 </div>
+ 			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter presentation">
+			 <div class="gallery">
+				<a href="http://www.theroyaljungle.com/" target="_blank">
+					<div class="card card-profile work-card-profile">
+						 <div class="card-cover" style="height: 200px; background-image: url('assets/images/theRoyalJungle.png');">
+						 </div>
+						 <div class="card-body work-card-body">
+								 <h4 class="card-title">The Royal Jungle</h4>
+								 <h6 class="coming-soon">Coming Soon</h6>
+								 <p class="card-description">
+									 I’ll be a moderator for a panel of blockchain experts.
+								 </p>
+						 </div>
+					 </div>
+				 </a>
+			 </div>
+			</div>
+			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter presentation">
+			 <div class="gallery">
+				<a href="https://www.starconferences.org/bcb2018.html" target="_blank">
+					<div class="card card-profile work-card-profile">
+						 <div class="card-cover" style="height: 200px; background-image: url('assets/images/blockchain&Bitcoin2018 .png');">
+						 </div>
+						 <div class="card-body work-card-body">
+								 <h4 class="card-title">Blockchain & Bitcoin 2018</h4>
+								 <h6 class="coming-soon">Coming Soon</h6>
+								 <p class="card-description">
+									 I’m an invited speaker there. There i'll give some introduction about Blockchain & Bitcoin.
+								 </p>
+						 </div>
+					 </div>
+				 </a>
+			 </div>
+			</div>
+			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter presentation">
+ 		   <div class="gallery">
+ 		 		<a href="https://www.facebook.com/events/1492455227519348/" target="_blank">
+ 		 			<div class="card card-profile work-card-profile">
+ 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/universityOfTorontoBusinessAssociation.jpg');">
+ 		 				 </div>
+ 		 				 <div class="card-body work-card-body">
+ 		 						 <h4 class="card-title">University of Toronto</h4>
+ 		 						 <h6 class="coming-soon">Coming Soon</h6>
+ 		 						 <p class="card-description">
+ 		 							 I’ll be giving a talk in front of undergraduates about blockchain and cryptocurrency and how I got into it.
+ 		 						 </p>
+ 		 				 </div>
+ 		 			 </div>
+ 		 		 </a>
+ 		   </div>
+ 		 </div>
+ 			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter project">
+			 <div class="gallery">
+				<a href="https://www.emergedev.co/" target="_blank">
+					<div class="card card-profile work-card-profile">
+						 <div class="card-cover" style="height: 200px; background-image: url('assets/images/emerge.webp');)">
+						 </div>
+						 <div class="card-body work-card-body">
+								 <h4 class="card-title">Emerge</h4>
+								 <h6 class="worked">Worked</h6>
+								 <p class="card-description">
+									 I was a part-time product designer for Emerge.
+								 </p>
+						 </div>
+					 </div>
+				 </a>
+			 </div>
+			</div>
+			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter project">
+			 <div class="gallery">
+				<a href="http://medium.com/usebelt" target="_blank">
+					<div class="card card-profile work-card-profile">
+						 <div class="card-cover" style="height: 200px; background-image: url('assets/images/belt.png');)">
+						 </div>
+						 <div class="card-body work-card-body">
+								 <h4 class="card-title">Belt</h4>
+								 <h6 class="worked">Worked</h6>
+								 <p class="card-description">
+									 I was a full-time interaction designer for Belt.
+								 </p>
+						 </div>
+					 </div>
+				 </a>
+			 </div>
+			</div>
+			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter presentation">
+ 		   <div class="gallery">
+ 		 		<a href="http://www.ethuoft.ca/" target="_blank">
+ 		 			<div class="card card-profile work-card-profile">
+ 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/ETHUofT.png');">
+ 		 				 </div>
+ 		 				 <div class="card-body work-card-body">
+ 		 						 <h4 class="card-title">ETHUofT</h4>
+ 		 						 <h6 class="coming-soon">Coming Soon</h6>
+ 		 						 <p class="card-description">
+ 		 							 I’ll be a speaker for their inaugural hackathon.
+ 		 						 </p>
+ 		 				 </div>
+ 		 			 </div>
+ 		 		 </a>
+ 		   </div>
+ 		 </div>
+ 			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter project">
+ 		   <div class="gallery">
+ 		 		<a href="https://saveforward.ca/" target="_blank">
+ 		 			<div class="card card-profile work-card-profile">
+ 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/saveforward.png');)">
+ 		 				 </div>
+ 		 				 <div class="card-body work-card-body">
+ 		 						 <h4 class="card-title">Saveforward</h4>
+ 		 						 <h6 class="worked">Worked</h6>
+ 		 						 <p class="card-description">
+ 		 							 I was a freelance product designer for Saveforward.
+ 		 						 </p>
+ 		 				 </div>
+ 		 			 </div>
+ 		 		 </a>
+ 		   </div>
+ 		 </div>
+ 			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter project">
+ 		   <div class="gallery">
+ 		 		<a href="https://saveforward.ca/" target="_blank">
+ 		 			<div class="card card-profile work-card-profile">
+ 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/hivewire.png');)">
+ 		 				 </div>
+ 		 				 <div class="card-body work-card-body">
+ 		 						 <h4 class="card-title">Hivewire</h4>
+ 		 						 <h6 class="worked">Worked</h6>
+ 		 						 <p class="card-description">
+ 		 							 I was a full-time product designer for Hivewire.
+ 		 						 </p>
+ 		 				 </div>
+ 		 			 </div>
+ 		 		 </a>
+ 		   </div>
+ 		 </div>
+ 			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter presentation">
+			 <div class="gallery">
+				<a href="https://medium.com/r/?url=https%3A%2F%2Fwww.facebook.com%2Frotaracteclub7070%2Fphotos%2Fa.1268019246555387.1073741828.1254580257899286%2F1822488094441830%2F%3Ftype%3D3%26theater" target="_blank">
+					<div class="card card-profile work-card-profile">
+						 <div class="card-cover" style="height: 200px; background-image: url('assets/images/rotaractClub.jpg');">
+						 </div>
+						 <div class="card-body work-card-body">
+								 <h4 class="card-title">Rotaract Club of Toronto</h4>
+								 <h6 class="coming-soon">Coming Soon</h6>
+								 <p class="card-description">
+									 Here I’ll be giving a virtual meeting all about blockchain and cryptocurrency.
+								 </p>
+						 </div>
+					 </div>
+				 </a>
+			 </div>
+			</div>
+			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter project">
+ 		   <div class="gallery">
+ 		 		<a href="http://dccper.com/" target="_blank">
+ 		 			<div class="card card-profile work-card-profile">
+ 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/DCCPER.png');)">
+ 		 				 </div>
+ 		 				 <div class="card-body work-card-body">
+ 		 						 <h4 class="card-title">DCCPER</h4>
+ 		 						 <h6 class="worked">Worked</h6>
+ 		 						 <p class="card-description">
+ 		 							 I was a full-time associate product manager (internship/co-op) for DCCPER.
+ 		 						 </p>
+ 		 				 </div>
+ 		 			 </div>
+ 		 		 </a>
+ 		   </div>
+ 		 </div>
+ 			<!-- End of Cards -->
+
+			<!-- Cards -->
+			<div class="animated zoomIn responsive filter project">
+ 		   <div class="gallery">
+ 		 		<a href="https://www.behance.net/gallery/60196109/Etherisc-Landing-Page-Redesign" target="_blank">
+ 		 			<div class="card card-profile work-card-profile">
+ 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/etheriscNiko.png');)">
+ 		 				 </div>
+ 		 				 <div class="card-body work-card-body">
+ 		 						 <h4 class="card-title">Etherisc and Niko</h4>
+ 		 						 <h6 class="worked">Worked</h6>
+ 		 						 <p class="card-description">
+ 		 							 The left one is a landing page redesign of the award-winning blockchain and insuritech company known as "Etherisc".
+ 		 						 </p>
+ 		 				 </div>
+ 		 			 </div>
+ 		 		 </a>
+ 		   </div>
+ 		 </div>
+ 			<!-- End of Cards -->
+
+			<!-- ClearFix -->
+			<div class="clearfix"></div>
+
+	 </div>
+	 <!-- End of Work Cards -->
+
+	</div>
+	<!-- Work Ends -->
+
+	<!-- Skill -->
+	<div id="skills">
+			<div class="label label-info text-center content-title">skills</div>
+			<div class="skill-logo">
+				<img src="assets/logos/adobe/creative-cloud-cc.svg" alt="Creative Cloud CC" class="logo"/>
+        <img src="assets/logos/adobe/adobe-animate.svg" alt="Adobe Animate" class="logo"/>
+        <img src="assets/logos/adobe/premiere-cc.svg" alt="Premiere CC" class="logo"/>
+				<img src="assets/logos/atomic-28.svg" alt="Atomic" class="logo"/>
+				<img src="assets/logos/figma-1.svg" alt="Figma" class="logo"/>
+				<img src="assets/logos/invision.svg" alt="Invision" class="logo"/>
+				<img src="assets/logos/google/google-plus.svg" alt="Google Plus" class="logo"/>
+				<img src="assets/logos/adobe/adobe-illustrator-cc.svg" alt="Adobe Illustrator CC" class="logo"/>
+				<img src="assets/logos/sketch-2.svg" alt="Sketch" class="logo"/>
+				<img src="assets/logos/slack/Slack%20App%20Icon.png" alt="Slack" class="logo"/>
+				<img src="assets/logos/marvel-5.svg" alt="Marvel 5" class="logo"/>
+				<img src="assets/logos/mockflow.svg" alt="Mockflow" class="logo"/>
+				<img src="assets/logos/origami.svg" alt="Origami" class="logo"/>
+				<img src="assets/logos/adobe/indesign-cc.svg" alt="Indesign CC" class="logo"/>
+				<img src="assets/logos/adobe/photoshop-cc.svg" alt="Photoshop CC" class="logo"/>
+				<img src="assets/logos/RealtimeBoard%20logo.png" alt="Realtime Board" class="logo"/>
+				<img src="assets/logos/wordpress-icon.svg" alt="Wordpress" class="logo"/>
+			</div>
+	</div>
+	<!-- Skill -->
+
+	<!-- About -->
+	<div id="about">
+		<div class="label label-info text-center content-title">About</div>
+		<div class="card card-profile about-card-profile" style="background: white; width: 80%; margin-top: 90px; margin-left: auto; margin-right: auto;">
+		   <div class="card-avatar">
+		       <a href="https://medium.com/@tosfan4ever" target="_blank">
+		           <img src="assets/images/zhao.jpeg" alt="..." style="border-radius: 25px">
+		       </a>
+		   </div>
+		   <div class="card-body">
+		       <h4 class="card-title" style="font-size: 25px;">Tian-Yuan Zhao</h4>
+		       <h6 class="card-category">UI/UX Designer</h6>
+		       <p class="card-description" style="text-align: justify; font-size: 20px;">
+		       	"I love product design, blockchain, and social innovation aspiring to become a digital engineer - someone who lies at the cross-section of data, design, and development. I'm a lifelong learner, passionate about exponential-thinking, design-thinking, and systems-thinking. I am what you may call an "innovation-thinker". I'm also a writer, singer, pianist - artist and performer overall; a comforter, philosopher, and lifelong mate. At the end of the day I'm young, scrappy, and hungry makin' it in the big city of the 6ix."
+		       </p>
+		   </div>
+		</div>
+	</div>
+	<!-- About Ends -->
+
+	<!-- Contact -->
+	<div id="contact" class="contact" style="width: 100%; margin-bottom: 30px; position: relative; font-size: 20px;">
+		<div class="label label-info text-center center-div content-title">contact</div>
+		<div class="row" style="padding-top: 80px;">
+	      <div class="col-md-6 ml-auto mr-auto text-center">
+	          <button class="btn btn-just-icon btn-twitter">
+	              <i class="fa fa-twitter"></i>
+	          </button>
+	          <button class="btn btn-just-icon btn-facebook">
+	              <i class="fa fa-facebook"></i>
+	          </button>
+	          <button class="btn btn-just-icon btn-google">
+	              <i class="fa fa-google"></i>
+	          </button>
+	          </button>
+	          <button class="btn btn-just-icon btn-dribbble">
+	              <i class="fa fa-dribbble"></i>
+	          </button>
+	          <button class="btn btn-just-icon btn-instagram">
+	              <i class="fa fa-instagram"></i>
+	          </button>
+	          <button class="btn btn-just-icon btn-youtube">
+	              <i class="fa fa-youtube"></i>
+	          </button>
+      </div>
+	  </div>
+		<div class="row">
+			<form action="address" method="post" style="width: 100%;" target="_blank">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <h3 class="title"><small>Or subscribe to newsletters</small></h3>
+                        <form class="contact">
+                            <div class="row">
+                                <div class="col-md-6 ml-auto mr-auto">
+                                    <input type="text" class="form-control" style="font-size: 20px; font-weight: 500;" placeholder="Email">
+                                </div>
+                            </div>
+														<br>
+                            <div class="row">
+                                <div class="col-md-6 ml-auto mr-auto">
+                                    <button type="submit" class="btn btn-primary btn-block btn-round">subscribe</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+							</form>
+	</div>
+	<!-- Contact Ends -->
+
+	<script>
+
+		var articles = ["Digital Product School (DPS)", "Your Financial Utility Belt — Pt. I", "Your Financial Utility Belt — Pt. II"];
+
+    // SVG animate
+		var path = document.getElementsByClassName("anime");
+		var length;
+		// console.log(path);
+		for (var i = 0; i < path.length; i++) {
+			length = path[i].getTotalLength();
+			// Clear any previous transition
+			path[i].style.transition = path[i].style.WebkitTransition = 'none';
+			// Set up the starting positions
+			path[i].style.strokeDasharray = length + ' ' + length;
+			path[i].style.strokeDashoffset = length;
+			// Trigger a layout so styles are calculated & the browser
+			// picks up the starting position before animating
+			path[i].getBoundingClientRect();
+			// Define our transition
+			path[i].style.transition = path[i].style.WebkitTransition = 'stroke-dashoffset 3s ease-in-out';
+			// Go!
+			path[i].style.strokeDashoffset = '0';
+		}
+		// End SVG animate
+
+		// Filtering Cards
+		filterSelection("all");
+		function filterSelection(c) {
+		  var x, i;
+		  x = document.getElementsByClassName("filter");
+		  for (i = 0; i < x.length; i++) {
+		    removeClass(x[i], "show");
+				void x[i].offsetWidth;
+		    if (x[i].className.indexOf(c) > -1 || c === 'all') addClass(x[i], "show");
+		  }
+		}
+
+		function addClass(element, name) {
+		  var i, arr1, arr2;
+		  arr1 = element.className.split(" ");
+		  arr2 = name.split(" ");
+		  for (i = 0; i < arr2.length; i++) {
+		    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+		  }
+		}
+
+		function removeClass(element, name) {
+		  var i, arr1, arr2;
+		  arr1 = element.className.split(" ");
+		  arr2 = name.split(" ");
+		  for (i = 0; i < arr2.length; i++) {
+		    while (arr1.indexOf(arr2[i]) > -1) {
+		      arr1.splice(arr1.indexOf(arr2[i]), 1);
+		    }
+		  }
+		  element.className = arr1.join(" ");
+		}
+
+		// Add active class to the current button (highlight it)
+		var btnContainer = document.getElementById("work-nav");
+		var btns = btnContainer.getElementsByClassName("nav-link");
+		for (var i = 0; i < btns.length; i++) {
+		  btns[i].addEventListener("click", function(){
+		    var current = document.getElementsByClassName("active");
+		    current[0].className = current[0].className.replace(" active", "");
+		    this.className += " active";
+		  });
+		}
+		// End Filtering Cards
+	</script>
+</body>
+</html>
