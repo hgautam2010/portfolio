@@ -1,3 +1,5 @@
+var sth = [[-100,200],[200,-50],[300,-100],[50,-90],[-110,-110],[80,150]];
+var dev = [[-100,200],[200,-50],[300,-100],[-424,436],[543,-111],[-276,131]];
 window.onresize = function() {
   var w = window.innerWidth;
 	var h = window.innerHeight;
@@ -12,17 +14,4 @@ window.onresize = function() {
 
 window.onload = function() {
 
-}
-
-function animateElements(e) {
-    var x = e.clientX;
-    var y = e.clientY;
-    x = -map(x, 0, canvas.width, -20, 20);
-    y = -map(y, 0, canvas.height, -20, 20);
-
-    var el = document.getElementById("pp");
-    if ( el.classList.contains('center-div') )
-        el.classList.remove('center-div');
-    el.style.left = (canvas.width/2 - 150 + x) + "px";
-    el.style.top = (canvas.height*0.15 + y) + "px";
 }

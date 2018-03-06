@@ -18,8 +18,8 @@ $(function () {
         var items = response.items;
         for (var i = 0; i < items.length; i++) {
 
-          //If article in addable then add it
-          if (articles.indexOf(items[i].title) > -1) {
+          //If Blog in addable then add it
+          if (blogs.indexOf(items[i].title) > -1) {
 
             var item = items[i];
 
@@ -41,7 +41,7 @@ $(function () {
                    </div>
                    <div class="card-body work-card-body">
                        <h4 class="card-title">${item.title}</h4>
-                       <h6 class="article">Article</h6>
+                       <h6 class="blog">Blog</h6>
                        <p class="card-description">
                          ${description}
                        </p>
