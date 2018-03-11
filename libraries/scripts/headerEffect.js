@@ -54,7 +54,7 @@ $(document).ready(function(){
           window.location.hash = hash;
         });
       } catch (e) {
-        console.log('nav clicked');
+
       }
     } // End if
   });
