@@ -112,7 +112,7 @@
 		 <!-- Cards -->
 		 <div class="animated zoomIn responsive filter side-hustle">
 		   <div class="gallery">
-		 		<a id="2" href="https://www.maropost.com/" target="_blank">
+		 		<a href="https://www.maropost.com/" target="_blank">
 		 			<div class="card card-profile work-card-profile">
 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/maropost.png');">
 		 				 </div>
@@ -552,6 +552,48 @@
 	</div>
 	<!-- Contact Ends -->
 
+<div style="width: 100%; height: 100vh;">
+  <div name="Hu" class="open-overlay">OPEN LAYER</div>
+
+<section class="overlay" aria-hidden="true">
+  <div>
+    <h4 style="position: sticky;   position: -webkit-sticky; top: 0px;">Passive Micro-Investments into Crypto-Assets</h4>
+<h4><a href="https://medium.com/usebelt/your-financial-utility-belt-pt-i-4c0ef92f0d66">Go back to Part I</a></h4>
+<h3>Third Component — Fintech &amp; Fiat Currencies</h3>
+<p>But there’s a problem — it’s difficult to get into this space as an investor of cryptoassets, as it’s time-consuming to become one.</p>
+<p>For the uninitiated, crypto-investing can take a 3 to 6 hours before a investing decision can be made and can take longer on coins that aren’t already on the major exchanges. These ICOs that have taken place in recent times are especially difficult to make decisions on because of how speculative they are.</p>
+<p>The reason for why it’s time-consuming is similar to stock-investments as there’s a lot of research one must conduct. From whitepapers to websites to the team behind the coin to Medium articles, Reddit posts, Facebook, Telegram, Whatsapp, Slack, Twitter, and regular news, the amount of material that’s out there is staggering.</p>
+<p>This is why we created Belt — a fintech solution that bridges the gap between your uninterrupted daily life and this time-consuming world of crypto-investing. Many crypto-investing solutions out there aim to solve this problem however and have popped up with the attempt to tackle it. However, many of them require you to purchase their new coin/token with the aim to remove the friction between different currencies, jurisdictions, and banks.</p>
+<p>Despite these attempts, we believe that the best way to address this isn’t to do another create another coin/token, rather enable you to maintain your course with what you’re already familiar with — fiat currencies. Fiat isn’t going anywhere despite all these changes happening, which is why our values are to deliver a more accessible and efficient way for you to obtain this utility.</p>
+<h3>Financial and Societal Gains</h3>
+<h4>Income Streams &amp; Outcome Streams</h4>
+<p>The reason for diversifying your revenue streams are abundant, we’re not here to convince you why you should. But briefly, a diverse array of income streams allows one to be more self-sufficient.</p>
+<p>But, cryptoassets aren’t just about financial gains. They’re about way more than just that. Cryptoassets each have their own purposes, functionality, and utility. Each coin/token (given the team behind it is legit) has an intended raison d’être. Whether it’s all about frictionless insurance, credit scoring, or energy transfer, the ownership of each cryptoasset allows one to have more of a direct impact in the value of it.</p>
+<p>This is why we care about bringing this world closer, easier, and more approachable for you. To have a direct impact in the value of what you own is a far-cry from regular stock-investments. Instead of simply a decision of buy or sell that determines the stock value, it’s about use or not use.</p>
+<p>Imagine you can use a stock in such a way that can influence the decisions of its company leadership. Say you can use the stock to prevent deforestation, improve working conditions in overseas factories, or bring about more fair trade, etc. These are all of course hypotheticals and are actually more of a metaphor. The point is that the value of cryptoassets change as per its usage and help to produce a unique outcome on the reality you believe in.</p>
+<p>The diversification of your income streams is one thing, but we at Belt believe in the diversification of your outcome streams as well.</p>
+<h4>Set it &amp; Forget it</h4>
+<p>We’re hoping to bring this Digital Asset Trinity easier to invest for you in a discrete, invisible, and seamless manner.</p>
+<p>We’re going to do this by enabling passive microinvestments into a small yet diverse set of cryptoassets with every purchase you make. From real-world transactions such as the weekly groceries you buy to online spending, you’ll be able to save towards your investments with every purchase you make.</p>
+<p>We’ll offer a set of preferences for you to customize the way you make these microinvestments. You can begin with as little as a roundup to the nearest dollar of every transaction you make to a percentage or top-up of whatever amount you choose. You can also edit the amount you save towards for your investments. This way, you can customize the amount you put in per transaction.</p>
+<h4>Why we’re called “Belt”</h4>
+<ol>
+<li>Inspired by other successful fintech companies such as Stripe and Plaid.</li>
+<li>Belts are adjustable, configurable, and possess freedom of control, therefore brings about accessibility</li>
+<li>Belts fastens, combines, and integrates things together, therefore brings about efficiency</li>
+<li>Belts are invisible, seamless, and genderless, therefore is universal</li>
+<li>And finally of course, we’re your Financial Utility “Belt”</li>
+</ol>
+<h3>Check us out here and sign up for early access!</h3>
+<p><a href="http://www.usebelt.com/">Belt Technologies</a></p>
+<h4><strong>Part III is forthcoming</strong></h4>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=3464fddf1b7f" width="1" height="1"><hr>
+<p><a href="https://medium.com/usebelt/introducing-belt-your-financial-utility-belt-3464fddf1b7f">Your Financial Utility Belt — Pt. II</a> was originally published in <a href="https://medium.com/usebelt">Belt Finance</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>
+    <div class="close-overlay">CLOSE LAYER</div>
+  </div>
+</section>
+</div>
+
 	<script>
 		var blogs = ["Digital Product School (DPS)", "Your Financial Utility Belt — Pt. I", "Your Financial Utility Belt — Pt. II"];
     // SVG animate
@@ -615,6 +657,26 @@
 		  });
 		}
 		// End Filtering Cards
+
+    var body = document.body;
+    var overlay = document.querySelector('.overlay'), overlayBtts = document.querySelectorAll('div[class$="overlay"]');
+    [].forEach.call(overlayBtts, function(btt) {
+        btt.addEventListener('click', function() {
+         /* Detect the button class name */
+         var overlayOpen = this.classList.contains('open-overlay');
+         console.log(this.getAttribute("name"));
+         /* Toggle the aria-hidden state on the overlay and the
+            no-scroll class on the body */
+         overlay.setAttribute('aria-hidden', !overlayOpen);
+         body.classList.toggle('noscroll', overlayOpen);
+         /* On some mobile browser when the overlay was previously
+            opened and scrolled, if you open it again it doesn't
+            reset its scrollTop property after the fadeout */
+         setTimeout(function() {
+             overlay.scrollTop = 0;
+         }, 1000)
+      }, false);
+    });
 	</script>
 </body>
 </html>

@@ -273,3 +273,42 @@ div.gallery:hover {
     clear: both;
 }
 /* Responsive cards Ends */
+
+/* To the body element */
+.noscroll {
+  overflow: hidden;
+}
+
+.overlay {
+position: fixed;
+overflow-y: scroll;
+top: 0; left: 0; top: 0; bottom: 0;
+}
+
+[aria-hidden="true"] {
+transition: opacity 1s, z-index 0s 1s;
+width: 100vw;
+z-index: -1;
+opacity: 0;  }
+
+[aria-hidden="false"] {
+transition: opacity 1s;
+width: 100%;
+z-index: 1;
+opacity: 1;
+}
+
+/* this code is not strictly necessary: just to make this demo a bit pleasant */
+.overlay div {
+width: 70%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 10vh;
+margin-bottom: 10vh;
+padding: 30px;
+border-radius: 10px;
+background: rgba(255,255,255, .95);
+}
+.overlay {
+background:  rgba(40,40,40, .75);
+}
