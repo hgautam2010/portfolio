@@ -1,620 +1,1296 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<!-- Required meta tags -->
+  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Tian-Yuan Zhao</title>
+  <title>Tian-Yuan Zhao</title>
 
-	<!-- paper-kit -->
-	<link href="libraries/paper/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="libraries/paper/css/paper-kit.css?v=2.1.0" rel="stylesheet"/>
+  <!-- paper-kit -->
+  <link href="libraries/paper/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="libraries/paper/css/paper-kit.css?v=2.1.0" rel="stylesheet" />
   <link href="libraries/paper/css/demo.css" rel="stylesheet" />
 
   <!--     Fonts and icons     -->
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,300,700" rel="stylesheet" type="text/css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <link href="libraries/paper/css/nucleo-icons.css" rel="stylesheet">
 
-	<!-- p5 -->
-	<script src="libraries/p5/p5.js"></script>
-	<script src="libraries/p5/p5.dom.js"></script>
-	<script src="particle.js"></script>
-	<script src="sketch.js"></script>
+  <link rel="stylesheet" href="libraries/css/master.css">
+  <link rel="stylesheet" href="libraries/animate/animate.css">
 
-	<link rel="stylesheet" href="libraries/css/master.css">
-	<link rel="stylesheet" href="libraries/animate/animate.css">
+  <link rel="icon" type="image/png" href="assets/images/man.png" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    .filter {
+      display: none;
+    }
 
-	<link rel="icon" type="image/png" href="assets/images/man.png"/>
-
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="libraries/scripts/headerEffect.js"></script>
-	<script src="libraries/scripts/medium.js"></script>
-	<script src="libraries/scripts/master.js"></script>
-	<style>
-		.filter {
-			display: none;
-		}
-		.show {
-			display: block;
-		}
-	</style>
+    .show {
+      display: block;
+    }
+  </style>
 </head>
-<body>
-	<!-- Header -->
-	<header class="nav-down" style="width: min-width; font-size: 18px; color: black; z-index: 2; z-index: 100;">
-			<a href="#work" style="margin-left:20px;" class="menu"><strong>Work</strong></a>
-			<a href="#skills" class="menu"><strong>Skills</strong></a>
-			<a href="#about" class="menu"><strong>About</strong></a>
-			<a href="#contact" style="margin-right: 20px" class="menu"><strong>Contact</strong></a>
-  </header>
-	<!-- Header Ends -->
 
-	<!-- Recent/Helighted/TagLine -->
-	<div id="recent">
-		<div class="animated lightSpeedIn" style="height: 90vh; padding-top: 42px; display: block; overflow: auto;">
-			<div class="card card-profile" id="tag-line" style="background: white;">
-		   <div class="card-avatar">
-		       <a href="https://medium.com/@tosfan4ever" target="_blank">
+<body>
+  <!-- Header -->
+  <header class="nav-down" style="width: min-width; font-size: 18px; color: black; z-index: 2; z-index: 100;">
+    <a href="#work" style="margin-left:20px;" class="menu"><strong>Work</strong></a>
+    <a href="#skills" class="menu"><strong>Skills</strong></a>
+    <a href="#about" class="menu"><strong>About</strong></a>
+    <a href="#contact" style="margin-right: 20px" class="menu"><strong>Contact</strong></a>
+  </header>
+  <!-- Header Ends -->
+
+  <!-- Recent/Helighted/TagLine -->
+  <div id="recent">
+    <div class="animated lightSpeedIn" style="height: 90vh; padding-top: 42px; display: block; overflow: auto;">
+      <div class="card card-profile" id="tag-line" style="background: white;">
+        <div class="card-avatar">
+          <a href="https://medium.com/@tosfan4ever" target="_blank">
 		           <img src="assets/images/zhao.jpeg" alt="..." style="border-radius: 25px">
 		       </a>
-		   </div>
-		   <div class="card-body">
-		       <h4 class="card-title">Tian-Yuan Zhao</h4>
-		       <h6 class="card-category">UI/UX Designer</h6>
-		       <p class="card-description">
-		       	I make heavenly UX come alive thus enabling greater wealth for U & I.
-		       </p>
-		   </div>
-			</div>
-		</div>
-	</div>
-	<!-- Recent/Helighted/TagLine Ends -->
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Tian-Yuan Zhao</h4>
+          <h6 class="card-category">UI/UX Designer</h6>
+          <p class="card-description">
+            I make heavenly UX come alive thus enabling greater wealth for U & I.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Recent/Helighted/TagLine Ends -->
 
-	<!-- Lead Down -->
-	<div id="lead-down" style="height: 10vh; display: block;">
+  <!-- Lead Down -->
+  <div id="lead-down" style="height: 10vh; display: block;">
     <span>
 			<a href="#work">
-        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        <i class="fa fa-arrow-down"></i>
 			</a>
     </span>
   </div>
-	<!-- Lead Down Ends -->
+  <!-- Lead Down Ends -->
 
-	<!-- Work -->
-	<div id="work">
+  <!-- Work -->
+  <div id="work">
 
-		<!-- Work Navigation -->
-		<ul id="work-nav" class="nav nav-pills nav-pills-info center-div" style="background: rgb(255,252,244); border-radius: 50px; z-index: 2;">
-			<li class="nav-item">
- 		     <a id="work-nav-link" onclick="filterSelection('all')" class="nav-link active" data-toggle="pill" href="#all" role="tab">All</a>
- 		 </li>
-		 <li class="nav-item">
-		     <a id="work-nav-link" onclick="filterSelection('project')" class="nav-link" data-toggle="pill" href="#projects" role="tab">Projects</a>
-		 </li>
-		 <li class="nav-item">
-		     <a id="work-nav-link" onclick="filterSelection('side-hustle')" class="nav-link" data-toggle="pill" href="#side-hustles" role="tab">Side-Hustles</a>
-		 </li>
-		 <li class="nav-item">
-		     <a id="work-nav-link" onclick="filterSelection('presentation')" class="nav-link" data-toggle="pill" href="#presentations" role="tab">Presentations</a>
-		 </li>
-		 <li class="nav-item">
-		     <a id="work-nav-link" onclick="filterSelection('medium')" class="nav-link" data-toggle="pill" href="#medium" role="tab">Medium</a>
-		 </li>
-	 </ul>
-	 <!-- Work Navigation -->
+    <!-- Work Navigation -->
+    <ul id="work-nav" class="nav nav-pills nav-pills-info center-div" style="background: #fffcf4; border-radius: 50px;">
+      <li class="nav-item">
+        <a onclick="filterSelection('all')" class="work-nav-link nav-link active" data-toggle="pill" href="#all" role="tab">All</a>
+      </li>
+      <li class="nav-item">
+        <a onclick="filterSelection('project')" class="work-nav-link nav-link" data-toggle="pill" href="#projects" role="tab">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a onclick="filterSelection('side-hustle')" class="work-nav-link nav-link" data-toggle="pill" href="#side-hustles" role="tab">Side-Hustles</a>
+      </li>
+      <li class="nav-item">
+        <a onclick="filterSelection('presentation')" class="work-nav-link nav-link" data-toggle="pill" href="#presentations" role="tab">Presentations</a>
+      </li>
+      <li class="nav-item">
+        <a onclick="filterSelection('medium')" class="work-nav-link nav-link" data-toggle="pill" href="#medium" role="tab">Medium</a>
+      </li>
+    </ul>
+    <!-- Work Navigation -->
 
-	 <!-- Work Cards -->
-	 <div id="work-cards" style="width: 100%; padding-top: 70px; padding-left: 5%; padding-right: 5%;">
+    <!-- Work Cards -->
+    <div id="work-cards" style="width: 100%; padding-top: 70px; padding-left: 5%; padding-right: 5%;">
 
-		 <!-- Cards -->
-		 <div class="animated zoomIn responsive filter side-hustle">
-		   <div class="gallery">
-		 		<a id="2" href="https://www.maropost.com/" target="_blank">
-		 			<div class="card card-profile work-card-profile">
-		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/maropost.png');">
-		 				 </div>
-		 				 <div class="card-body work-card-body">
-		 						 <h4 class="card-title">Maropost</h4>
-		 						 <h6 class="current">Current Project</h6>
-		 						 <p class="card-description">
-		 							 Maropost is a swiss-army knife of sales and marketing tools with their Marketing Cloud (MMC) being an all-inclusive set of digital marketing tools and their Sales Cloud (MSC) being an all-inclusive set of digital sales tools.
-		 						 </p>
-		 				 </div>
-		 			 </div>
-		 		 </a>
-		   </div>
-		 </div>
-			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter side-hustle">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="maropost" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/maropost.png');">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">Maropost</h4>
+                <h6 class="current">Current Project</h6>
+                <p class="card-description">
+                  Maropost is a swiss-army knife of sales and marketing tools with their Marketing Cloud (MMC) being an all-inclusive set of digital marketing tools and their Sales Cloud (MSC) being an all-inclusive set of digital sales tools.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter side-hustle">
-			<div class="gallery">
-			 <a href="https://marvelapp.com/4gb7d21/screen/38950262" target="_blank">
-				 <div class="card card-profile work-card-profile">
-						<div class="card-cover" style="height: 200px; background-image: url('assets/images/cryptoCanucks.png');">
-						</div>
-						<div class="card-body work-card-body">
-								<h4 class="card-title">CryptoCanucks</h4>
-								<h6 class="current">Current Project</h6>
-								<p class="card-description">
-									I'm a part-time freelance gig there. Crypto Canucks provide one of the best initial coin offer.
-								</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			</div>
-			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter side-hustle">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="cryptoCanucks" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/cryptoCanucks.png');">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">CryptoCanucks</h4>
+                <h6 class="current">Current Project</h6>
+                <p class="card-description">
+                  I'm a part-time freelance gig there. Crypto Canucks provide one of the best initial coin offer.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter side-hustle">
- 		   <div class="gallery">
- 		 		<a href="http://theblockchainhub.com/cbd" target="_blank">
- 		 			<div class="card card-profile work-card-profile">
- 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/blockchainHub.jpg');">
- 		 				 </div>
- 		 				 <div class="card-body work-card-body">
- 		 						 <h4 class="card-title">BlockchainHub</h4>
- 		 						 <h6 class="current">Current Project</h6>
- 		 						 <p class="card-description">
- 		 							 I’ll be the lead instructor of their. This program will guide the candidates through the concepts of blockchain technology, cryptoeconomics, and product design (UX).
- 		 						 </p>
- 		 				 </div>
- 		 			 </div>
- 		 		 </a>
- 		   </div>
- 		 </div>
- 			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter side-hustle">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="BlockchainHub" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/blockchainHub.jpg');">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">BlockchainHub</h4>
+                <h6 class="current">Current Project</h6>
+                <p class="card-description">
+                  I’ll be the lead instructor of their. This program will guide the candidates through the concepts of blockchain technology, cryptoeconomics, and product design (UX).
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter side-hustle">
- 		   <div class="gallery">
- 		 		<a target="_blank">
- 		 			<div class="card card-profile work-card-profile">
- 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/default.jpg');">
- 		 				 </div>
- 		 				 <div class="card-body work-card-body">
- 		 						 <h4 class="card-title">Silly Valley</h4>
- 		 						 <h6 class="coming-soon">Coming Soon</h6>
- 		 						 <p class="card-description">
- 		 							 A side project all about satirizing the tech/startup worlds. I'll be one of the team member there.
- 		 						 </p>
- 		 				 </div>
- 		 			 </div>
- 		 		 </a>
- 		   </div>
- 		 </div>
- 			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter side-hustle">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="SillyValley" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/default.jpg');">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">Silly Valley</h4>
+                <h6 class="coming-soon">Coming Soon</h6>
+                <p class="card-description">
+                  A side project all about satirizing the tech/startup worlds. I'll be one of the team member there.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter side-hustle">
- 		   <div class="gallery">
- 		 		<a target="_blank">
- 		 			<div class="card card-profile work-card-profile">
- 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/default.jpg');">
- 		 				 </div>
- 		 				 <div class="card-body work-card-body">
- 		 						 <h4 class="card-title">UXelerate</h4>
- 		 						 <h6 class="coming-soon">Coming Soon</h6>
- 		 						 <p class="card-description">
- 		 							 A side project that’s similar to Whitespace but for Canada. I'll be one of the team member there.
- 		 						 </p>
- 		 				 </div>
- 		 			 </div>
- 		 		 </a>
- 		   </div>
- 		 </div>
- 			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter side-hustle">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="UXelerate" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/default.jpg');">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">UXelerate</h4>
+                <h6 class="coming-soon">Coming Soon</h6>
+                <p class="card-description">
+                  A side project that’s similar to Whitespace but for Canada. I'll be one of the team member there.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter presentation">
- 		   <div class="gallery">
- 		 		<a href="http://2018.podcamptoronto.com/sessions/circular-design-economy-blockchain/" target="_blank">
- 		 			<div class="card card-profile work-card-profile">
- 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/podCamp2018.png');">
- 		 				 </div>
- 		 				 <div class="card-body work-card-body">
- 		 						 <h4 class="card-title">PodCamp 2018</h4>
- 		 						 <h6 class="coming-soon">Coming Soon</h6>
- 		 						 <p class="card-description">
- 		 							 Here I’ll talk about the intersection of Circular Design/Economy and Blockchain, 2 subject matters that I believe to be naturally linked.
- 		 						 </p>
- 		 				 </div>
- 		 			 </div>
- 		 		 </a>
- 		   </div>
- 		 </div>
- 			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter presentation">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="PodCamp2018" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/podCamp2018.png');">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">PodCamp 2018</h4>
+                <h6 class="coming-soon">Coming Soon</h6>
+                <p class="card-description">
+                  Here I’ll talk about the intersection of Circular Design/Economy and Blockchain, 2 subject matters that I believe to be naturally linked.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter presentation">
-			 <div class="gallery">
-				<a href="http://www.theroyaljungle.com/" target="_blank">
-					<div class="card card-profile work-card-profile">
-						 <div class="card-cover" style="height: 200px; background-image: url('assets/images/theRoyalJungle.png');">
-						 </div>
-						 <div class="card-body work-card-body">
-								 <h4 class="card-title">The Royal Jungle</h4>
-								 <h6 class="coming-soon">Coming Soon</h6>
-								 <p class="card-description">
-									 I’ll be a moderator for a panel of blockchain experts.
-								 </p>
-						 </div>
-					 </div>
-				 </a>
-			 </div>
-			</div>
-			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter presentation">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="TheRoyalJungle" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/theRoyalJungle.png');">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">The Royal Jungle</h4>
+                <h6 class="coming-soon">Coming Soon</h6>
+                <p class="card-description">
+                  I’ll be a moderator for a panel of blockchain experts.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter presentation">
-			 <div class="gallery">
-				<a href="https://www.starconferences.org/bcb2018.html" target="_blank">
-					<div class="card card-profile work-card-profile">
-						 <div class="card-cover" style="height: 200px; background-image: url('assets/images/blockchain&Bitcoin2018 .png');">
-						 </div>
-						 <div class="card-body work-card-body">
-								 <h4 class="card-title">Blockchain & Bitcoin 2018</h4>
-								 <h6 class="coming-soon">Coming Soon</h6>
-								 <p class="card-description">
-									 I’m an invited speaker there. There i'll give some introduction about Blockchain & Bitcoin.
-								 </p>
-						 </div>
-					 </div>
-				 </a>
-			 </div>
-			</div>
-			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter presentation">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="Blockchain&Bitcoin2018" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/blockchain&Bitcoin2018.png');">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">Blockchain & Bitcoin 2018</h4>
+                <h6 class="coming-soon">Coming Soon</h6>
+                <p class="card-description">
+                  I’m an invited speaker there. There i'll give some introduction about Blockchain & Bitcoin.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter presentation">
- 		   <div class="gallery">
- 		 		<a href="https://www.facebook.com/events/1492455227519348/" target="_blank">
- 		 			<div class="card card-profile work-card-profile">
- 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/universityOfTorontoBusinessAssociation.jpg');">
- 		 				 </div>
- 		 				 <div class="card-body work-card-body">
- 		 						 <h4 class="card-title">University of Toronto</h4>
- 		 						 <h6 class="coming-soon">Coming Soon</h6>
- 		 						 <p class="card-description">
- 		 							 I’ll be giving a talk in front of undergraduates about blockchain and cryptocurrency and how I got into it.
- 		 						 </p>
- 		 				 </div>
- 		 			 </div>
- 		 		 </a>
- 		   </div>
- 		 </div>
- 			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter presentation">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="universityOfTorontoBusinessAssociation" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/universityOfTorontoBusinessAssociation.jpg');">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">University of Toronto</h4>
+                <h6 class="coming-soon">Coming Soon</h6>
+                <p class="card-description">
+                  I’ll be giving a talk in front of undergraduates about blockchain and cryptocurrency and how I got into it.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter project">
-			 <div class="gallery">
-				<a href="https://www.emergedev.co/" target="_blank">
-					<div class="card card-profile work-card-profile">
-						 <div class="card-cover" style="height: 200px; background-image: url('assets/images/emerge.webp');)">
-						 </div>
-						 <div class="card-body work-card-body">
-								 <h4 class="card-title">Emerge</h4>
-								 <h6 class="worked">Worked</h6>
-								 <p class="card-description">
-									 I was a part-time product designer for Emerge.
-								 </p>
-						 </div>
-					 </div>
-				 </a>
-			 </div>
-			</div>
-			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter project">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="emerge" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/emerge.webp');)">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">Emerge</h4>
+                <h6 class="worked">Worked</h6>
+                <p class="card-description">
+                  I was a part-time product designer for Emerge.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter project">
-			 <div class="gallery">
-				<a href="http://medium.com/usebelt" target="_blank">
-					<div class="card card-profile work-card-profile">
-						 <div class="card-cover" style="height: 200px; background-image: url('assets/images/belt.png');)">
-						 </div>
-						 <div class="card-body work-card-body">
-								 <h4 class="card-title">Belt</h4>
-								 <h6 class="worked">Worked</h6>
-								 <p class="card-description">
-									 I was a full-time interaction designer for Belt.
-								 </p>
-						 </div>
-					 </div>
-				 </a>
-			 </div>
-			</div>
-			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter project">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="Belt" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/belt.png');)">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">Belt</h4>
+                <h6 class="worked">Worked</h6>
+                <p class="card-description">
+                  I was a full-time interaction designer for Belt.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter presentation">
- 		   <div class="gallery">
- 		 		<a href="http://www.ethuoft.ca/" target="_blank">
- 		 			<div class="card card-profile work-card-profile">
- 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/ETHUofT.png');">
- 		 				 </div>
- 		 				 <div class="card-body work-card-body">
- 		 						 <h4 class="card-title">ETHUofT</h4>
- 		 						 <h6 class="coming-soon">Coming Soon</h6>
- 		 						 <p class="card-description">
- 		 							 I’ll be a speaker for their inaugural hackathon.
- 		 						 </p>
- 		 				 </div>
- 		 			 </div>
- 		 		 </a>
- 		   </div>
- 		 </div>
- 			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter presentation">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="ETHUofT" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/ETHUofT.png');">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">ETHUofT</h4>
+                <h6 class="coming-soon">Coming Soon</h6>
+                <p class="card-description">
+                  I’ll be a speaker for their inaugural hackathon.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter project">
- 		   <div class="gallery">
- 		 		<a href="https://saveforward.ca/" target="_blank">
- 		 			<div class="card card-profile work-card-profile">
- 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/saveforward.png');)">
- 		 				 </div>
- 		 				 <div class="card-body work-card-body">
- 		 						 <h4 class="card-title">Saveforward</h4>
- 		 						 <h6 class="worked">Worked</h6>
- 		 						 <p class="card-description">
- 		 							 I was a freelance product designer for Saveforward.
- 		 						 </p>
- 		 				 </div>
- 		 			 </div>
- 		 		 </a>
- 		   </div>
- 		 </div>
- 			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter project">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="Saveforward" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/saveforward.png');)">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">Saveforward</h4>
+                <h6 class="worked">Worked</h6>
+                <p class="card-description">
+                  I was a freelance product designer for Saveforward.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter project">
- 		   <div class="gallery">
- 		 		<a href="https://saveforward.ca/" target="_blank">
- 		 			<div class="card card-profile work-card-profile">
- 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/hivewire.png');)">
- 		 				 </div>
- 		 				 <div class="card-body work-card-body">
- 		 						 <h4 class="card-title">Hivewire</h4>
- 		 						 <h6 class="worked">Worked</h6>
- 		 						 <p class="card-description">
- 		 							 I was a full-time product designer for Hivewire.
- 		 						 </p>
- 		 				 </div>
- 		 			 </div>
- 		 		 </a>
- 		   </div>
- 		 </div>
- 			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter project">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="Hivewire" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/hivewire.png');)">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">Hivewire</h4>
+                <h6 class="worked">Worked</h6>
+                <p class="card-description">
+                  I was a full-time product designer for Hivewire.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter presentation">
-			 <div class="gallery">
-				<a href="https://medium.com/r/?url=https%3A%2F%2Fwww.facebook.com%2Frotaracteclub7070%2Fphotos%2Fa.1268019246555387.1073741828.1254580257899286%2F1822488094441830%2F%3Ftype%3D3%26theater" target="_blank">
-					<div class="card card-profile work-card-profile">
-						 <div class="card-cover" style="height: 200px; background-image: url('assets/images/rotaractClub.jpg');">
-						 </div>
-						 <div class="card-body work-card-body">
-								 <h4 class="card-title">Rotaract Club of Toronto</h4>
-								 <h6 class="coming-soon">Coming Soon</h6>
-								 <p class="card-description">
-									 Here I’ll be giving a virtual meeting all about blockchain and cryptocurrency.
-								 </p>
-						 </div>
-					 </div>
-				 </a>
-			 </div>
-			</div>
-			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter presentation">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="RotaractClubofToronto" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/rotaractClub.jpg');">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">Rotaract Club of Toronto</h4>
+                <h6 class="coming-soon">Coming Soon</h6>
+                <p class="card-description">
+                  Here I’ll be giving a virtual meeting all about blockchain and cryptocurrency.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter project">
- 		   <div class="gallery">
- 		 		<a href="http://dccper.com/" target="_blank">
- 		 			<div class="card card-profile work-card-profile">
- 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/DCCPER.png');)">
- 		 				 </div>
- 		 				 <div class="card-body work-card-body">
- 		 						 <h4 class="card-title">DCCPER</h4>
- 		 						 <h6 class="worked">Worked</h6>
- 		 						 <p class="card-description">
- 		 							 I was a full-time associate product manager (internship/co-op) for DCCPER.
- 		 						 </p>
- 		 				 </div>
- 		 			 </div>
- 		 		 </a>
- 		   </div>
- 		 </div>
- 			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter project">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="DCCPER" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/DCCPER.png');)">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">DCCPER</h4>
+                <h6 class="worked">Worked</h6>
+                <p class="card-description">
+                  I was a full-time associate product manager (internship/co-op) for DCCPER.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- Cards -->
-			<div class="animated zoomIn responsive filter project">
- 		   <div class="gallery">
- 		 		<a href="https://www.behance.net/gallery/60196109/Etherisc-Landing-Page-Redesign" target="_blank">
- 		 			<div class="card card-profile work-card-profile">
- 		 				 <div class="card-cover" style="height: 200px; background-image: url('assets/images/etheriscNiko.png');)">
- 		 				 </div>
- 		 				 <div class="card-body work-card-body">
- 		 						 <h4 class="card-title">Etherisc and Niko</h4>
- 		 						 <h6 class="worked">Worked</h6>
- 		 						 <p class="card-description">
- 		 							 The left one is a landing page redesign of the award-winning blockchain and insuritech company known as "Etherisc".
- 		 						 </p>
- 		 				 </div>
- 		 			 </div>
- 		 		 </a>
- 		   </div>
- 		 </div>
- 			<!-- End of Cards -->
+      <!-- Cards -->
+      <div class="animated zoomIn responsive filter project">
+        <div class="gallery">
+          <a href="JavaScript:void(0);" name="Etherisc&Niko" onclick="displayContent(this)">
+            <div class="card card-profile work-card-profile">
+              <div class="card-cover" style="height: 200px; background-image: url('assets/images/etheriscNiko.png');)">
+              </div>
+              <div class="card-body work-card-body">
+                <h4 class="card-title">Etherisc and Niko</h4>
+                <h6 class="worked">Worked</h6>
+                <p class="card-description">
+                  The left one is a landing page redesign of the award-winning blockchain and insuritech company known as "Etherisc".
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of Cards -->
 
-			<!-- ClearFix -->
-			<div class="clearfix"></div>
+      <!-- ClearFix -->
+      <div class="clearfix"></div>
 
-	 </div>
-	 <!-- End of Work Cards -->
+    </div>
+    <!-- End of Work Cards -->
 
-	</div>
-	<!-- Work Ends -->
+  </div>
+  <!-- Work Ends -->
 
-	<!-- Skill -->
-	<div id="skills">
-			<div class="label label-info text-center content-title">skills</div>
-			<div class="skill-logo">
-				<img src="assets/logos/adobe/creative-cloud-cc.svg" alt="Creative Cloud CC" class="logo"/>
-        <img src="assets/logos/adobe/adobe-animate.svg" alt="Adobe Animate" class="logo"/>
-        <img src="assets/logos/adobe/premiere-cc.svg" alt="Premiere CC" class="logo"/>
-				<img src="assets/logos/atomic-28.svg" alt="Atomic" class="logo"/>
-				<img src="assets/logos/figma-1.svg" alt="Figma" class="logo"/>
-				<img src="assets/logos/invision.svg" alt="Invision" class="logo"/>
-				<img src="assets/logos/google/google-plus.svg" alt="Google Plus" class="logo"/>
-				<img src="assets/logos/adobe/adobe-illustrator-cc.svg" alt="Adobe Illustrator CC" class="logo"/>
-				<img src="assets/logos/sketch-2.svg" alt="Sketch" class="logo"/>
-				<img src="assets/logos/slack/Slack%20App%20Icon.png" alt="Slack" class="logo"/>
-				<img src="assets/logos/marvel-5.svg" alt="Marvel 5" class="logo"/>
-				<img src="assets/logos/mockflow.svg" alt="Mockflow" class="logo"/>
-				<img src="assets/logos/origami.svg" alt="Origami" class="logo"/>
-				<img src="assets/logos/adobe/indesign-cc.svg" alt="Indesign CC" class="logo"/>
-				<img src="assets/logos/adobe/photoshop-cc.svg" alt="Photoshop CC" class="logo"/>
-				<img src="assets/logos/RealtimeBoard%20logo.png" alt="Realtime Board" class="logo"/>
-				<img src="assets/logos/wordpress-icon.svg" alt="Wordpress" class="logo"/>
-			</div>
-	</div>
-	<!-- Skill -->
+  <!-- Skill -->
+  <div id="skills">
+    <div class="label label-info text-center content-title">skills</div>
+    <div class="skill-logo">
+      <img src="assets/logos/adobe/creative-cloud-cc.svg" alt="Creative Cloud CC" class="logo" />
+      <img src="assets/logos/adobe/adobe-animate.svg" alt="Adobe Animate" class="logo" />
+      <img src="assets/logos/adobe/premiere-cc.svg" alt="Premiere CC" class="logo" />
+      <img src="assets/logos/atomic-28.svg" alt="Atomic" class="logo" />
+      <img src="assets/logos/figma-1.svg" alt="Figma" class="logo" />
+      <img src="assets/logos/invision.svg" alt="Invision" class="logo" />
+      <img src="assets/logos/google/google-plus.svg" alt="Google Plus" class="logo" />
+      <img src="assets/logos/adobe/adobe-illustrator-cc.svg" alt="Adobe Illustrator CC" class="logo" />
+      <img src="assets/logos/sketch-2.svg" alt="Sketch" class="logo" />
+      <img src="assets/logos/slack/Slack%20App%20Icon.png" alt="Slack" class="logo" />
+      <img src="assets/logos/marvel-5.svg" alt="Marvel 5" class="logo" />
+      <img src="assets/logos/mockflow.svg" alt="Mockflow" class="logo" />
+      <img src="assets/logos/origami.svg" alt="Origami" class="logo" />
+      <img src="assets/logos/adobe/indesign-cc.svg" alt="Indesign CC" class="logo" />
+      <img src="assets/logos/adobe/photoshop-cc.svg" alt="Photoshop CC" class="logo" />
+      <img src="assets/logos/RealtimeBoard%20logo.png" alt="Realtime Board" class="logo" />
+      <img src="assets/logos/wordpress-icon.svg" alt="Wordpress" class="logo" />
+    </div>
+  </div>
+  <!-- Skill -->
 
-	<!-- About -->
-	<div id="about">
-		<div class="label label-info text-center content-title">About</div>
-		<div class="card card-profile about-card-profile" style="background: white; width: 80%; margin-top: 90px; margin-left: auto; margin-right: auto;">
-		   <div class="card-avatar">
-		       <a href="https://medium.com/@tosfan4ever" target="_blank">
+  <!-- About -->
+  <div id="about">
+    <div class="label label-info text-center content-title">About</div>
+    <div class="card card-profile about-card-profile" style="background: white; width: 80%; margin-top: 90px; margin-left: auto; margin-right: auto;">
+      <div class="card-avatar">
+        <a href="https://medium.com/@tosfan4ever" target="_blank">
 		           <img src="assets/images/zhao.jpeg" alt="..." style="border-radius: 25px">
 		       </a>
-		   </div>
-		   <div class="card-body">
-		       <h4 class="card-title" style="font-size: 25px;">Tian-Yuan Zhao</h4>
-		       <h6 class="card-category">UI/UX Designer</h6>
-		       <p class="card-description" style="text-align: justify; font-size: 20px;">
-		       	"I love product design, blockchain, and social innovation aspiring to become a digital engineer - someone who lies at the cross-section of data, design, and development. I'm a lifelong learner, passionate about exponential-thinking, design-thinking, and systems-thinking. I am what you may call an "innovation-thinker". I'm also a writer, singer, pianist - artist and performer overall; a comforter, philosopher, and lifelong mate. At the end of the day I'm young, scrappy, and hungry makin' it in the big city of the 6ix."
-		       </p>
-		   </div>
-		</div>
-	</div>
-	<!-- About Ends -->
+      </div>
+      <div class="card-body">
+        <h4 class="card-title" style="font-size: 25px;">Tian-Yuan Zhao</h4>
+        <h6 class="card-category">UI/UX Designer</h6>
+        <p class="card-description" style="text-align: justify; font-size: 20px;">
+          "I love product design, blockchain, and social innovation aspiring to become a digital engineer - someone who lies at the cross-section of data, design, and development. I'm a lifelong learner, passionate about exponential-thinking, design-thinking, and
+          systems-thinking. I am what you may call an "innovation-thinker". I'm also a writer, singer, pianist - artist and performer overall; a comforter, philosopher, and lifelong mate. At the end of the day I'm young, scrappy, and hungry makin' it
+          in the big city of the 6ix."
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- About Ends -->
 
-	<!-- Contact -->
-	<div id="contact" class="contact" style="width: 100%; margin-bottom: 30px; position: relative; font-size: 20px;">
-		<div class="label label-info text-center center-div content-title">contact</div>
-		<div class="row" style="padding-top: 80px;">
-	      <div class="col-md-6 ml-auto mr-auto text-center">
-	          <button class="btn btn-just-icon btn-twitter">
+  <!-- Contact -->
+  <div id="contact" class="contact" style="width: 100%; margin-bottom: 30px; position: relative; font-size: 20px;">
+    <div class="label label-info text-center center-div content-title">contact</div>
+    <div class="row" style="padding-top: 80px;">
+      <div class="col-md-6 ml-auto mr-auto text-center">
+        <button class="btn btn-just-icon btn-twitter">
 	              <i class="fa fa-twitter"></i>
 	          </button>
-	          <button class="btn btn-just-icon btn-facebook">
+        <button class="btn btn-just-icon btn-facebook">
 	              <i class="fa fa-facebook"></i>
 	          </button>
-	          <button class="btn btn-just-icon btn-google">
+        <button class="btn btn-just-icon btn-google">
 	              <i class="fa fa-google"></i>
 	          </button>
-	          </button>
-	          <button class="btn btn-just-icon btn-dribbble">
+        <button class="btn btn-just-icon btn-dribbble">
 	              <i class="fa fa-dribbble"></i>
 	          </button>
-	          <button class="btn btn-just-icon btn-instagram">
+        <button class="btn btn-just-icon btn-instagram">
 	              <i class="fa fa-instagram"></i>
 	          </button>
-	          <button class="btn btn-just-icon btn-youtube">
+        <button class="btn btn-just-icon btn-youtube">
 	              <i class="fa fa-youtube"></i>
 	          </button>
       </div>
-	  </div>
-		<div class="row">
-			<form action="address" method="post" style="width: 100%;" target="_blank">
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <h3 class="title"><small>Or subscribe to newsletters</small></h3>
-                        <form class="contact">
-                            <div class="row">
-                                <div class="col-md-6 ml-auto mr-auto">
-                                    <input type="text" class="form-control" style="font-size: 20px; font-weight: 500;" placeholder="Email">
-                                </div>
-                            </div>
-														<br>
-                            <div class="row">
-                                <div class="col-md-6 ml-auto mr-auto">
-                                    <button type="submit" class="btn btn-primary btn-block btn-round">subscribe</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-							</form>
-	</div>
-	<!-- Contact Ends -->
+    </div>
+    <div class="row">
+      <form action="address" method="post" style="width: 100%;" target="_blank">
+        <div class="col-md-6 ml-auto mr-auto text-center">
+          <h3 class="title"><small>Or subscribe to newsletters</small></h3>
+          <form class="contact">
+            <div class="row">
+              <div class="col-md-6 ml-auto mr-auto">
+                <input type="text" class="form-control" style="font-size: 20px; font-weight: 500;" placeholder="Email">
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6 ml-auto mr-auto">
+                <button type="submit" class="btn btn-primary btn-block btn-round">subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Contact Ends -->
 
-	<script>
-		var blogs = ["Digital Product School (DPS)", "Your Financial Utility Belt — Pt. I", "Your Financial Utility Belt — Pt. II"];
-    // SVG animate
-		var path = document.getElementsByClassName("anime");
-		var length;
-		// console.log(path);
-		for (var i = 0; i < path.length; i++) {
-			length = path[i].getTotalLength();
-			// Clear any previous transition
-			path[i].style.transition = path[i].style.WebkitTransition = 'none';
-			// Set up the starting positions
-			path[i].style.strokeDasharray = length + ' ' + length;
-			path[i].style.strokeDashoffset = length;
-			// Trigger a layout so styles are calculated & the browser
-			// picks up the starting position before animating
-			path[i].getBoundingClientRect();
-			// Define our transition
-			path[i].style.transition = path[i].style.WebkitTransition = 'stroke-dashoffset 3s ease-in-out';
-			// Go!
-			path[i].style.strokeDashoffset = '0';
-		}
-		// End SVG animate
-		// Filtering Cards
-		filterSelection("all");
-		function filterSelection(c) {
-		  var x, i;
-		  x = document.getElementsByClassName("filter");
-		  for (i = 0; i < x.length; i++) {
-		    removeClass(x[i], "show");
-				void x[i].offsetWidth;
-		    if (x[i].className.indexOf(c) > -1 || c === 'all') addClass(x[i], "show");
-		  }
-		}
-		function addClass(element, name) {
-		  var i, arr1, arr2;
-		  arr1 = element.className.split(" ");
-		  arr2 = name.split(" ");
-		  for (i = 0; i < arr2.length; i++) {
-		    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-		  }
-		}
-		function removeClass(element, name) {
-		  var i, arr1, arr2;
-		  arr1 = element.className.split(" ");
-		  arr2 = name.split(" ");
-		  for (i = 0; i < arr2.length; i++) {
-		    while (arr1.indexOf(arr2[i]) > -1) {
-		      arr1.splice(arr1.indexOf(arr2[i]), 1);
-		    }
-		  }
-		  element.className = arr1.join(" ");
-		}
-		// Add active class to the current button (highlight it)
-		var btnContainer = document.getElementById("work-nav");
-		var btns = btnContainer.getElementsByClassName("nav-link");
-		for (var i = 0; i < btns.length; i++) {
-		  btns[i].addEventListener("click", function(){
-		    var current = document.getElementsByClassName("active");
-		    current[0].className = current[0].className.replace(" active", "");
-		    this.className += " active";
-		  });
-		}
-		// End Filtering Cards
-	</script>
+
+  <!-- Maropost content -->
+  <article id="maropost" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/maropost.png" alt="Maropost" style="width: 70%; margin-left: auto; margin-right: auto; display: block;">
+      <h1 style="font-weight: 500;">Maropost</h1>
+      <h4>The Da Vinci of Revenue Optimization</h4>
+      <p>
+        Maropost is a swiss-army knife of sales and marketing tools with their Marketing Cloud (MMC) being an all-inclusive set of digital marketing tools and their Sales Cloud (MSC) being an all-inclusive set of digital sales tools.
+      </p>
+      <p>
+        I’m tasked with designing their design system.
+      </p>
+      <p>
+        The reason why I call it the “Da Vinci” of Revenue Optimization is because:
+      </p>
+      <p>a) Maropost is in short a revenue optimization software</p>
+      <p>b) Maropost possesses an AI named “Da Vinci”</p>
+      <p>c) Maropost is a “Da Vinci”-like software because of its polymath-nature</p>
+      <p>Due to a lack of time, this article will show a preview of designs I’m currently working on for both the web app of MSC and the mobile app of MMC. With regards to the explanatory/descriptive/design-thinking element of this article — with time I’ll
+        edit/update/add to this article. For now, I’ll simply show the “what”, the “how” and “why” will be shared at a later time.</p>
+      <p>I’m also currently working on additional products such as:</p>
+      <ol>
+        <li>Maropost Product Management (MPM)</li>
+        <li>Maropost Relay (MRL)</li>
+      </ol>
+      <a href="https://medium.com/r/?url=https%3A%2F%2Fmarvelapp.com%2F60gj8hb">
+        <p>Here’s a prototype of the MMC mobile app</p>
+      </a>
+      <h4 style="margin: 20px;">MMC — iOS — Portrait View</h4>
+      <div style="margin-top: 0px; margin-bottom: 0px; width: 100%; display: flex; justify-content: center; flex-wrap: wrap;">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p0.png" alt="p0">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p01.png" alt="p01">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p1.png" alt="p1">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p2.png" alt="p2">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p3.png" alt="p3">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p4.png" alt="p4">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p5.png" alt="p5">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p6.png" alt="p6">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p7.png" alt="p7">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p8.png" alt="p8">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p9.png" alt="p9">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p10.png" alt="p10">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p11.png" alt="p11">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p12.png" alt="p12">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p13.png" alt="p13">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p14.png" alt="p14">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p15.png" alt="p15">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p16.png" alt="p16">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p17.png" alt="p17">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p18.png" alt="p18">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p19.png" alt="p19">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p20.png" alt="p20">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p21.png" alt="p21">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p22.png" alt="p22">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p23.png" alt="p23">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p24.png" alt="p24">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p25.png" alt="p25">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p26.png" alt="p26">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p27.png" alt="p27">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p28.png" alt="p28">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p29.png" alt="p29">
+        <img src="assets/projects/maropost/MMC-iOS-Portrait/p30.png" alt="p30">
+      </div>
+      <h4 style="margin: 20px;">MMC — iOS — Landscape View</h4>
+      <div style="margin-top: 0px; margin-bottom: 0px; width: 100%; display: flex; justify-content: center; flex-wrap: wrap;">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p0.png" alt="p0">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p01.png" alt="p01">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p1.png" alt="p1">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p2.png" alt="p2">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p3.png" alt="p3">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p4.png" alt="p4">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p5.png" alt="p5">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p6.png" alt="p6">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p7.png" alt="p7">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p8.png" alt="p8">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p9.png" alt="p9">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p10.png" alt="p10">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p11.png" alt="p11">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p12.png" alt="p12">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p13.png" alt="p13">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p14.png" alt="p14">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p15.png" alt="p15">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p16.png" alt="p16">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p17.png" alt="p17">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p18.png" alt="p18">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p19.png" alt="p19">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p20.png" alt="p20">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p21.png" alt="p21">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p22.png" alt="p22">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p23.png" alt="p23">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p24.png" alt="p24">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p25.png" alt="p25">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p26.png" alt="p26">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p27.png" alt="p27">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p28.png" alt="p28">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p29.png" alt="p29">
+        <img src="assets/projects/maropost/MMC-iOS-Landscape/p30.png" alt="p30">
+      </div>
+      <h4 style="margin: 20px;">MSC—WEB</h4>
+      <div style="margin-top: 0px; margin-bottom: 0px; width: 100%; display: flex; justify-content: center; flex-wrap: wrap;">
+        <img src="assets/projects/maropost/MSC-Web/p1.png" style="height: 50%; width: 100%;" alt="p1">
+        <img src="assets/projects/maropost/MSC-Web/p2.png" style="height: 50%; width: 100%;" alt="p2">
+        <img src="assets/projects/maropost/MSC-Web/p3.png" style="height: 50%; width: 100%;" alt="p3">
+      </div>
+      <h4 style="margin: 20px;">MPM—WEB</h4>
+      <div style="margin-top: 0px; margin-bottom: 0px; width: 100%; display: flex; justify-content: center; flex-wrap: wrap;">
+        <img src="assets/projects/maropost/MPM-Web/p1.png" style="height: 50%; width: 100%;" alt="p1">
+        <img src="assets/projects/maropost/MPM-Web/p2.png" style="height: 50%; width: 100%;" alt="p2">
+      </div>
+    </div>
+    <a href="JavaScript:void(0)" name="maropost" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End Maropost content -->
+
+  <!-- cryptoCanucks content -->
+  <article id="cryptoCanucks" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <p>
+        Temporarily I put one pic only. Maybe I'll make slideshow later.
+      </p>
+      <img style="width: 100%;" src="assets/projects/cryptoCanucks/p9.png" alt="p9">
+    </div>
+    <a href="JavaScript:void(0)" name="cryptoCanucks" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End cryptoCanucks content -->
+
+  <!-- BlockchainHub content -->
+  <article id="BlockchainHub" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/blockchainHub.jpg" alt="Maropost" style="width: 70%; margin-left: auto; margin-right: auto; display: block;">
+      <h3>CERTIFIED BLOCKCHAIN UX DESIGNER</h3>
+      <h1>CBD</h1>
+      <p>This program will guide the candidates through the concepts of blockchain technology, cryptoeconomics, and product UX design. By completing the program, participants will be able to understand the theoretical underpinnings of how to apply design-thinking,
+        systems-thinking, and exponential-thinking into the design of blockchain (distributed/decentralized) solutions. In addition, participants will have a deep and wide understanding of the social impact this technology can have. Participants will
+        get to review UX case-studies within the blockchain space, learn more about existing solutions, and receive guidance from industry experts on how to design an effective blockchain solution. There will be a strong focus on Ethereum. </p>
+      <p>This program consists of three days intensive training course and one week of group work on a capstone project. You will receive a certificate upon completion of the course.</p>
+      <h3>Prerequisite:</h3>
+      <ul>
+        <li>CBP Certification or Profound knowledge of blockchain technology</li>
+      </ul>
+      <h3>Course Modules</h3>
+      <p><b>This program consists of three days intensive training course and one week of group work on a capstone project.</b> You will receive a certificate upon completion of the course.</p>
+      <p>
+        <b>Module1-Intensive Training Module (3 days)</b>
+      </p>
+      <p>
+        <b>DAY 1 – HIGH-LEVEL</b>
+      </p>
+      <p><b>9:00 to 10:00am:</b> What blockchain and design is! This will be a quick recap of how blockchain and product design relates to each other. Blockchain is first and foremost a design principle. What are the affordances with regards to blockchain?</p>
+      <p><b>10:00 to 11:00am:</b> Innovation-Thinking – a combination of design-thinking + exponential-thinking + systems-thinking</p>
+      <p><b>11:00 to 12:00pm:</b> How Cryptoeconomics and Tokenization relates to UX Design?</p>
+      <p><b>1:00 to 3:00pm:</b> Discussion on blockchain protocols such as consensus and oracles; and how this relates to design.Discussion on behavioural economics and how this relates to blockchain</p>
+      <p><b>3:00 to 5:00pm:</b> Circular Economies and Circular Design as well as Social Innovation/Impact</p>
+      <p>
+        <b> DAY 2 – MID-LEVEL</b>
+      </p>
+      <p><b>9:00 to 10:00am:</b> Decentralized Governance and how does this relates to design</p>
+      <p><b>10:00 to 11:00am:</b> Proof of X – what all these “Proof of ___” mean? And how does this relate to design</p>
+      <p><b>11:00am to 12pm:</b> Discussion on additional blockchain concepts such as Escrow, Public vs. Private vs. Permissioned blockchains, gas, etc. and how it relates to product design as well as business design. The ultimate goal of this section is
+        to talk about what the potential new business model of the Web 3.0 world will be. Cloud computing gave birth to Software-as-a- Service as well as IaaS and PaaS. But now, with distributed computing and decentralized applications what will be the
+        new business model?</p>
+      <p><b>1:00 to 3:00pm:</b> Gamification + Blockchain + UX Design</p>
+      <p><b>3:00 to 5:00pm:</b> Blockchain and Data Visualization</p>
+      <p>
+        <b>DAY 3 – UX CASE-STUDY</b>
+      </p>
+      <p><b>9:00 to 10:00am:</b> Case-Study #0: lightning discussions on all the existing applications of blockchain which tackle low-hanging fruit problems.</p>
+      <p><b>10:00 to 12:00pm:</b> Case-Study #1: real-world example (higher-hanging fruit)</p>
+      <p><b>1:00 to 3:00pm:</b> Case-Study #2: personal project</p>
+      <p><b>3:00 to 5:00pm:</b> Case-Study #3: speculative design</p>
+      <p>
+        <b>MODULE2-CAPSTOME PROJECT SUBMISSION (7 DAYS)</b>
+      </p>
+      <p>students will design a Minimum Lovable Product in the form of a clickable prototype or whatever other form factor that makes the most sense in order to illustrate their understanding of what they’ve learned.</p>
+    </div>
+    <a href="JavaScript:void(0)" name="BlockchainHub" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End BlockchainHub content -->
+
+  <!-- UXelerate content -->
+  <article id="UXelerate" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/default.jpg" alt="UXelerate" style="width: 50%; margin-left: auto; margin-right: auto; display: block;">
+      <h2>Silly Valley</h2>
+      <p>I unable to find content for SillyValley.</p>
+    </div>
+    <a href="JavaScript:void(0)" name="UXelerate" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End UXelerate content -->
+
+  <!-- Silly Valley content -->
+  <article id="SillyValley" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/default.jpg" alt="SillyValley" style="width: 50%; margin-left: auto; margin-right: auto; display: block;">
+      <h2>Silly Valley</h2>
+      <p>I unable to find content for SillyValley.</p>
+    </div>
+    <a href="JavaScript:void(0)" name="SillyValley" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End Silly Valley content -->
+
+  <!-- PodCamp2018 content -->
+  <article id="PodCamp2018" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/podCamp2018.png" alt="Pod Camp 2018" style="width: 30%; margin-left: auto; margin-right: auto; display: block;">
+      <h2>Circular Design/Economy & Blockchain</h2>
+      <p>Here I’ll talk about the intersection of Circular Design/Economy and Blockchain, 2 subject matters that I believe to be naturally linked. As human civilization continues to become more technologically advanced and human lifespans continue to expand
+        due to improvements in healthcare and biomedical research & development we need to build more self-sufficient societies and systems. We need to become less of a take, make and waste society to a more take, make, and remake society. The blockchain
+        is a technology that has emerged in recent times to possess intrinsic value in terms of social innovation and impact. Said technology has the potential to create self-sustaining and self-sufficient systems in a scalable fashion. This session explores
+        this intersection within multiple industries and the kind of impact it could have on various societies from emerging markets to developed ones.</p>
+
+      <p>Key Take Aways</p>
+      <ul>
+        <li>Circular Design</li>
+        <li>Circular Economy</li>
+        <li>Cryptoeconomics</li>
+        <li>Blockchain</li>
+        <li>Tokenization</li>
+      </ul>
+    </div>
+    <a href="JavaScript:void(0)" name="PodCamp2018" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End PodCamp2018 content -->
+
+  <!-- The Royal Jungle content -->
+  <article id="TheRoyalJungle" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/theRoyalJungle.png" alt="The Royal Jungle" style="width: 70%; margin-left: auto; margin-right: auto; display: block;"> I don't know what should i put here.
+    </div>
+    <a href="JavaScript:void(0)" name="TheRoyalJungle" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End The Royal Jungle content -->
+
+  <!-- Blockchain & Bitcoin 2018 content -->
+  <article id="Blockchain&Bitcoin2018" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/blockchain&Bitcoin2018.png" alt="Blockchain & Bitcoin 2018" style="width: 70%; margin-left: auto; margin-right: auto; display: block;">
+      <h2>Blockchain & Bitcoin 2018</h2>
+      <h3>INTRODUCTION:</h3>
+      <p><b>Bitcoin</b> is the first blockchain-based decentralized digital currency that is progressively being utilized everywhere worldwide since 2009. It has advanced its development into many other assets and forms of Blockchain technology.</p>
+      <p>The industry has been developing more rapidly than the boldest forecasts predicted. Capitalization of the crypto-currency market has approached the $ 100 billion mark in 2017.Over the last decade, the world of digital currencies underwent the major
+        transformation with the introduction of Bitcoins in the market. Bitcoin is a decentralized cryptocurrency, purely peer-to-peer version of electronic cash used for online transactions through digital unit of exchange, where a user can make transaction
+        without any middlemen.</p>
+      <p>Transactions made are processed through private network of computers, linked through shared program and simultaneously it gets verified and recorded in public distributed ledger, called the block chain. Bitcoin is the most prominent triple entry
+        bookkeeping system in existence. Some of the key benefits of using bitcoin are: there are no intermediaries or third party involved in, to interrupt, lesser transaction fees, multimode payments methods, daily cash outs and others.</p>
+      <p><b>Crypto-Bitcoin & Blockchain Congress</b> is a series of events focussing on Blockchain and cryptocurrencies. The Blockchain technology has already conquered not only the financial and banking spheres but also started to spread its roots in medicine,
+        insurance, document circulation, solar, etc. Experts will share their experience of implementing Blockchain in governmental institutions (Govtech), banking system, trading, media, healthcare and other spheres. We will discuss all the aspects of
+        creating innovative IT products – from the emergence of idea to entering the market.</p>
+      <p><b>The main participants</b> are IT developers, entrepreneurs, investors, software and equipment manufacturers. The speakers are managers of the well-known companies and representatives of governmental authorities.</p>
+      <p>Join <b>Crypto-Bitcoin & Blockchain Congress Summit</b> for better future today!</p>
+
+      <h3>ʙʀɪᴇғ ᴍᴀʀᴋᴇᴛ sᴜʀᴠᴇʏ:</h3>
+      <b>Global Bitcoin Technology Market - Market Trends and Forecasts (2015 - 2020)</b>
+      <p>Blockchain technology, which is best known for powering Bitcoin and other cryptocurrencies, is gaining steam among finance firms because of its potential to streamline processes and increase efficiency. The technology could cut costs by up to $20
+        billion annually by 2022.</p>
+      <p>That's because blockchain, which operates as a distributed ledger, has the ability to allow multiple parties to transfer and store sensitive information in a space that’s secure, permanent, anonymous, and easily accessible. That could simplify paper-heavy,
+        expensive, or logistically complicated financial systems, like remittances and cross-border transfer, shareholder management and ownership exchange, and securities trading, to name a few. And outside of finance, governments and the music industry
+        are investigating the technology’s potential to simplify record-keeping.</p>
+      <p>As a result, venture capital firms and financial institutions alike are pouring investment into finding, developing, and testing blockchain use cases. Over 50 major financial institutions are involved with collaborative blockchain startups, have
+        begun researching the technology in-house, or have helped fund startups with products rooted in blockchain.</p>
+      <p>In BI Intelligence’s Blockchain Report, we explain how blockchain works, why it has the potential to provide a watershed moment for the financial industry, and the different ways it could be put into practice in the coming years.</p>
+      <b>Keynotes:</b>
+      <ul>
+        <li>Spending on capital markets applications of blockchain is expected to grow at a 52% compound annual growth rate (CAGR) through 2019, according to Aite Group, to reach $400 million that year.</li>
+        <li>Banks and major financial institutions are working both collaboratively and independently to develop blockchain tech. Over 50 major financial institutions are involved with collaborative blockchain startups, like R3 CEV or Chain. And many are
+          investing in the technology on their own as well.</li>
+        <li>Putting blockchain to use for real-world transactions is likely not that far off. If working groups' tests are successful, firms could be using it to transact real value as early as the end of this year and we could see widespread industry application
+          within the next few years.</li>
+      </ul>
+      <p>Over the last decade, the world of digital currencies underwent the major transformation with the introduction of Bitcoins in the market. Bitcoin is a decentralized cryptocurrency, purely peer-to-peer version of electronic cash used for online transactions
+        through digital unit of exchange, where a user can make transaction without any middlemen. Transactions made are processed through private network of computers, linked through shared program and simultaneously it gets verified and recorded in
+        public distributed ledger, called the book chain. Bitcoin is the most prominent triple entry bookkeeping system in existence. Some of the key benefits of using bitcoin are: there are no intermediaries or third party involved in, to interrupt,
+        lesser transaction fees, multimode payments methods, daily cash outs and others.</p>
+      <p>Bitcoin, have paved the way for increased mainstream acceptance for the digital currency, which even has the potential for transforming global financial transactions. In current scenario, most of the online merchants and startup companies have already
+        started enjoying the anonymity and efficiency of bitcoin payments, which allows them to cut overhead costs compared to credit or debit cards transactions.</p>
+      <p>The Global Bitcoin Technology Market is estimated to grow at a CAGR of 7.26% over the period 2015 - 2020. Booming economy and growing disposable income among middle income group in developing world has led Bitcoin technologies to gain traction and
+        to be used as one of the medium of exchange in the region.</p>
+      <p>However, the recent regulations and directives imposed by the European banking authorities has hugely impacted the Bitcoin market in Europe. Whereas, owing to large number of bitcoin users, the market will witness growth in the North America region.</p>
+      <p>Global Bitcoin technology market have been broadly segmented on the basis of denominations used, services offered, industry verticals and geography. As per denominations, the market have been segregated into bitcoin (BTC), millibitcoin (mBTC), microbitcoin
+        (uBTC) and satoshi. Whereas per services it has been segmented by bitcoin exchanges, remittance services, and payment & wallet services. Various industry verticals, where bitcoin are being used are mining, banking and financial services, entertainment
+        and media.</p>
+    </div>
+    <a href="JavaScript:void(0)" name="Blockchain&Bitcoin2018" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End Blockchain & Bitcoin 2018 content -->
+
+  <!-- University Of Toronto Business Association content -->
+  <article id="universityOfTorontoBusinessAssociation" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/universityOfTorontoBusinessAssociation.jpg" alt="The Royal Jungle" style="width: 70%; margin-left: auto; margin-right: auto; display: block;">
+      <h2>University of Toronto Business Association</h2>
+      <p>The University of Toronto Business Association cordially invites you to our last event "Tech101: AI, Blockchain and Networking!" We are going to present two speaker series on "AI x Business" as well as on "Blockchain & Future." These speaker series
+        are followed by a networking session with a number of business professionals and entrepreneurs in the field of technology (AI, Blockchain, IoT, consulting, data science, start-ups etc).</p>
+      <ul>
+        <li>Date: March 17th (Saturday)</li>
+        <li>Time: 2:15pm to 4:30pm</li>
+        <li>Place: SK548 (246 Bloor Street West)</li>
+        <li>Dress Code: Business Casual</li>
+      </ul>
+    </div>
+    <a href="JavaScript:void(0)" name="universityOfTorontoBusinessAssociation" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End University Of Toronto Business Association content -->
+
+  <!-- Emerge content -->
+  <article id="emerge" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/emerge.webp" alt="Emerge" style="width: 70%; margin-left: auto; margin-right: auto; display: block;">
+      <h2>Emerge</h2>
+      <h3>An Introduction: Emerge</h3>
+      <p>Leapfrogging is when a community or organization uses emerging technologies to bypass steps in traditional development cycles. This jump often leads to economic growth, increased productivity, and an overall drastic improvement of quality of life.</p>
+      <p>Enter blockchain — a technological breakthrough that is accelerating the transformation of political, social and economic realities in emerging market countries. And while the technology is nascent, the opportunities are seemingly endless. Blockchain
+        is both inevitable and unknown, which is also why it is now our collective responsibility to ensure we use its powers for social good, and that we develop the technology and its derivatives in a more inclusive and more responsible manner than
+        any technology before it.</p>
+      <p>Resilient blockchain technologies can increase access to financial services and resources, enable fair judicial processes and transparent voting mechanisms, and efficiently distribute energy or healthcare services. Blockchain for social good is
+        transformative and it has inspired a whole new class of entrepreneurs to emerge.</p>
+      <p>We are Emerge, a social enterprise that leverages blockchain to create socio-economic inclusion for emerging market and diaspora communities around the world. Our team is made up of diaspora entrepreneurs familiar with the struggles of building
+        businesses in our home and adopted countries. We are therefore committed to using blockchain to inspire and facilitate grassroots innovation.</p>
+      <p>Here are some of the projects we have been working on.</p>
+      <h2>From Our Product Studio</h2>
+      <p>Raise, a diaspora direct investment platform that leverages smart contracts, milestones, social impact metrics and token incentives to enable diaspora community members to invest in emerging market entrepreneurs. Raise aims to redefine traditional
+        investment by creating an international economic bridge that leads to strong local startup ecosystems in regions such as Latin America, the Caribbean, Africa, the Middle East and Asia. Our product placed second at a major international blockchain
+        hackathon and will be ready to launch in 2018.</p>
+      <p>Homeward, a blockchain enabled platform to expedite and improve the country referral process for refugee resettlement. Homeward aims to bring the humanity back to the way we process refugee applications, and ultimately lead refugees to the right
+        place to rebuild their homes and lives. Our product is in the early stages of development and currently in progress at one of the world’s largest international blockchain hackathons.</p>
+      <h2>Research</h2>
+      <p>Earlier this year, we introduced Leap, the first research publication to track blockchain projects in emerging markets. We provided data on 448 projects across Latin America, the Middle East, Africa, Asia, the Caribbean and Eastern Europe, highlighting
+        exemplary use cases and regional industries of interest. Leap 2.0 will be released in 2018, featuring more and deeper data. Please email us at hello@emergedev.co if you are interested in collaborating on this project.</p>
+      <h2>Education</h2>
+      <p><i>e:disrupt</i>, a series of blockchain for social impact hackathons. Our first event will be in Toronto, Canada, on May 31, 2018 in partnership with the MaRS Discovery District. Our second will be held in Hong Kong during the summer of 2018.</p>
+    </div>
+    <a href="JavaScript:void(0)" name="emerge" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End Emerge content -->
+
+  <!-- Belt content -->
+  <article id="Belt" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/belt.png" alt="Belt" style="width: 30%; margin-left: auto; margin-right: auto; display: block;">
+      <h2>Belt — “Your Financial Utility Belt”</h2>
+      <h3>A Case-Study</h3>
+      <h4>Who</h4>
+      <p>Product Manager = Felix G.</p>
+      <p>Interaction Designer = Tian Z.</p>
+      <p>Software Engineer = Alex T.</p>
+      <p>AI Engineer = Agata B.</p>
+      <h4>Why</h4>
+      <p>Team Reasons — threefold</p>
+      <ol>
+        <li>Tian has some subject matter expertise in this realm and is incredibly passionate about blockchain/cryptoassets</li>
+        <li>After much debate about what problem space to tackle based on the Felix’s initial pitched problem space of “using AI to improve HR”, we decided to tackle a less competitive realm.</li>
+        <li>Agata has specific interest in Natural Language Processing and we found a better application of her skills in the blockchain/cryptoasset problem space vs. HR.</li>
+      </ol>
+      <p><b>User Problem</b> — threefold, users want to invest in cryptoassets but</p>
+      <ol>
+        <li>have a hard time to invest in cryptoassets</li>
+        <li>have little time to invest in cryptoassets</li>
+        <li>have a difficult time trusting in certain cryptoassets</li>
+      </ol>
+      <p><b>Market Opportunity</b> — threefold, blockchain may be more valuable of a technology but cryptoassets</p>
+      <ol>
+        <li>can be securities (re: security tokens) and therefore have potential for great gains</li>
+        <li>can be utilities (re: utility tokens) and therefore act as an interface to blockchain</li>
+        <li>represent the future of capitalism (re: Capitalism 2.0)</li>
+      </ol>
+      <a href="https://medium.com/usebelt/your-financial-utility-belt-pt-i-4c0ef92f0d66">It’s discussed here in Belt’s first published article</a>
+
+      <p>In short, the persona — Maggie Chen is someone a young who’s a professional product manager at a social media analytics company and is very much so interested in investing in cryptoassets but find it difficult to get into it.</p>
+
+      <h4>How</h4>
+      <p>
+        <b>Double-Diamond Design-Thinking</b>
+      </p>
+      <img src="assets/projects/belt/p1.png" style="margin-left: auto; margin-right: auto; display: block;max-width: 100%;" alt="">
+      <p style="text-align: center;">from research to designing to prototyping to testing to iterating</p>
+      <p>
+        <b>Agile and Lean</b>
+      </p>
+      <img src="assets/projects/belt/p2.png" style="margin-left: auto; margin-right: auto; display: block;max-width: 100%;" alt="">
+      <p style="text-align: center;">this is an example of our last week’s sprint kanban board</p>
+      <p>
+        <b>Problem Validation</b>
+      </p>
+      <ol>
+        <li>Direct Competitors — 3 called Coinseed, Coinflash, and Dust</li>
+        <li>Indirect Competitors — several including North American ones like Mylo.ai, Acorn, and Moneybox</li>
+        <li>Newsletter — 25% conversion rate</li>
+        <li>User Interviews</li>
+        <li>User Surveys</li>
+      </ol>
+      <p>
+        <b>Graphics/Visuals</b>
+      </p>
+      <ol>
+        <li>Mood Board — V1a inspired by companies like Wealthsimple, Bloom, Digital Asset, Coinvest, and DashFlow but then V2 was based on Coinbase</li>
+        <li>Typography — V1 used a simple sans-serif font but V2 used Nunito Sans in order to be both professional and friendly</li>
+        <li>Iconography — V1 used a small set defined by the PM but V2 was chosen from a carefully curated list of 15 (5 sets of 3).</li>
+      </ol>
+      <p>
+        <b>Storymapping</b>
+      </p>
+      <img src="assets/projects/belt/p3.png" style="margin-left: auto; margin-right: auto; display: block;max-width: 100%;" alt="">
+      <p>
+        <b>Usability Testing</b>
+      </p>
+      <p>A/B Testing of V1a and V1b:</p>
+
+      <ol>
+        <li>IxD’s (Tian) Version: https://invis.io/AVEH2Y5Y6</li>
+        <li>PM’s (Felix) Version: https://invis.io/6ZEK6YSNB</li>
+      </ol>
+      <p>
+        <b>Feedback Collection</b>
+      </p>
+      <img src="assets/projects/belt/p4.png" style="margin-left: auto; margin-right: auto; display: block;max-width: 100%;" alt="">
+      <h3>What</h3>
+      <p>Belt is a fintech app which allows you to seamlessly make microinvestments into Bitcoin, Ether, or Litecoin (for now) with your spare change (round-up, top-up, or percentage of every transaction you make). We believe that cryptoassets and the blockchain
+        technology represent not only the next evolutionary step of the internet but also capitalism overall.</p>
+
+      <p>
+        <b>Why we’re called “Belt”?</b>
+      </p>
+      <ol>
+        <li>Inspired by other successful fintech companies such as Stripe and Plaid.</li>
+        <li>Belts are adjustable, configurable, and possess freedom of control, therefore brings about accessibility</li>
+        <li>Belts fastens, combines, and integrates things together, therefore brings about efficiency</li>
+        <li>Belts are invisible, seamless, and genderless, therefore is universal</li>
+        <li>And finally of course, we’re your Financial Utility “Belt”</li>
+      </ol>
+      <p>I elaborate more on our philosophy here — <a href="https://medium.com/usebelt/introducing-belt-your-financial-utility-belt-3464fddf1b7f">https://medium.com/usebelt/introducing-belt-your-financial-utility-belt-3464fddf1b7f</a></p>
+
+      <p>
+        <b>But in short, our 3 core values are:</b>
+      </p>
+      <ol>
+        <li>Efficiency</li>
+        <li>Utility</li>
+        <li>Accessibility</li>
+      </ol>
+      <p>
+        <b>How we Tackled all 3 Problems:</b>
+      </p>
+      <ol>
+        <li>Hard Time — by investing spare change, a smaller risk is taken by the user</li>
+        <li>Little Time — by simply connecting your bank and making purchases, not much time needs to be spent in order to make investments</li>
+        <li>Belt Score — by providing this, we enable calmness, clarity, and context for the user to aid in their decision-making process.</li>
+      </ol>
+      <p>
+        <b>Prototype V2 or Current Version</b>
+      </p>
+      <a href="https://invis.io/QRESBT8JX">https://invis.io/QRESBT8JX</a>
+
+      <p>
+        <b>B2B-component of Belt:</b>
+      </p>
+      <p>Basically, an enterprise software that will enable employees to be paid partially/fully in cryptocurrencies as well as provide blockchain-based insurance solutions to them similar to how League aggregates healthcare insurance providers.</p>
+
+      <img src="assets/projects/belt/p5.png" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+
+      <p>
+        <b>Where — it could still go</b>
+      </p>
+      <ol>
+        <li>Inclusion of ICO’s or TGE’s</li>
+        <li>Inclusion of B2B model: employee wages</li>
+        <li>Inclusion of algo-trading</li>
+      </ol>
+    </div>
+    <a href="JavaScript:void(0)" name="Belt" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End Belt content -->
+
+  <!-- ETHUofT content -->
+  <article id="ETHUofT" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/ETHUofT.png" alt="ETHUofT" style="width: 70%; margin-left: auto; margin-right: auto; display: block;">
+      <h2>ETHUofT</h2>
+      <h3>What is ETHUofT?</h3>
+      <p>ETHUoFT is a student-focused Hackathon aimed at giving participants the necessary skills to contribute to the Ethereum ecosystem. Over the course of our 36 hour Hackathon there will be various workshops held by Ethereum experts. We want to help
+        provide the needed resources, mentors, and software to make awesome things possible.</p>
+    </div>
+    <a href="JavaScript:void(0)" name="ETHUofT" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End ETHUofT content -->
+
+  <!-- Saveforward content -->
+  <article id="Saveforward" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/projects/saveforward/p0.png" alt="Saveforward" style="width: 70%; margin-left: auto; margin-right: auto; display: block;">
+      <h2>SaveForward X SkillShare</h2>
+      <h3>A Case-Study of my e-course — <a href="http://skl.sh/2gVLefn">http://skl.sh/2gVLefn</a></h3>
+      <p>
+        2 months ago, I received an invite by the ed-tech company known as Skillshare to teach a course on digital product design, more specifically “how to build a Minimum Lovable Product”. It was an honour to receive such an invitation and it wasn’t long after I received that invite that I happened to attend a focus group conducted by a social venture called “SaveForward”. How do these 2 things relate you may wonder? Well it was during this focus group (an incubee of the Sprout Ideas Fellowship) when I an idea sprouted from within me — to partner up with them in order to teach my course in such a way where I can be provide the most value in my life and work. It was one of those “killing 2 birds with 1 stone” decisions as I was able to marry the love and passion I have for social entrepreneurship (+ fintech and philanthropy as that’s what SaveForward’s about) with product design (+ community development and passive income as this opportunity SkillShare presented to me would enable).
+      </p>
+      <p>But before we begin, what is SaveForward? It’s basically a fintech + philanthropy app that’s all about providing people a way to save money from impulse purchases such as coffee or the like in order to save towards microloans for people in developing countries (or simply put — those in need)</p>
+      <p>The following is the process I undertook to complete this course and redesign SaveForward, beginning with…</p>
+      <h3>Philosophy:</h3>
+      <p>Given that the bulk of the business aspect of this project has already been completed by the 2 cofounders of SaveForward coupled with my own aforementioned problem-solving approach, the following will be an updated version of the following Double Diamond Design Process:</p>
+      <img src="assets/projects/saveforward/p1.png" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <h3>User Research / 1st Diamond</h3>
+      <h4>Psychological Principles</h4>
+      <img src="assets/projects/saveforward/p2.png" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <p>I took into account of this huge codex of cognitive biases, coupled with things like the following:</p>
+      <ol>
+        <li>Fitt’s + HIck’s + Miller’s Laws</li>
+        <li>Gestalt Principles</li>
+        <li>Cognitive Load</li>
+        <li>Affordance & Mental Models</li>
+        <li>Usability Heuristics</li>
+        <li>and more!</li>
+      </ol>
+      <h3>Persona Building</h3>
+      <img src="assets/projects/saveforward/p3.png" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <h3>Product Designing / 2nd Diamond</h3>
+      <p>This is the UI of what the original looked like:</p>
+      <img src="assets/projects/saveforward/p4.png" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <p style="text-align: center;">Main</p>
+      <img src="assets/projects/saveforward/p5.jpeg" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <p style="text-align: center;">My Loans</p>
+      <img src="assets/projects/saveforward/p6.jpeg" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <p style="text-align: center;">Menu</p>
+      <img src="assets/projects/saveforward/p7.jpeg" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <p style="text-align: center;">Transaction History</p>
+      <img src="assets/projects/saveforward/p8.jpeg" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <p style="text-align: center;">Main Action</p>
+      <h3>Main Areas of Improvements:</h3>
+      <ol>
+        <li><b>Modernization —</b> removal of hamburger menu and bottom-left floater icon as well as updating card elements for example.</li>
+        <li><b>Content —</b> added all the necessary content that wasn’t there before such as Loans section, a big aspect of what makes SaveForward what it is.</li>
+        <li><b>MECE —</b> this was used to account for all the new content added to what was there before, to establish informational hierarchy, and form flow.</li>
+      </ol>
+      <h3>Wireframing</h3>
+      <img src="assets/projects/saveforward/p9.png" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <h3>UI Designing + Prototyping + 1st Iteration:</h3>
+      <h3>2nd Iteration:</h3>
+      <h3>Main Areas of Improvement:</h3>
+      <ol>
+        <li><b>Written & Visual Language —</b> updated it to be more understandable in terms of simpler speech as well as a colour code.</li>
+        <li><b>Digital Real-Estate —</b> made better use of this by having all card items fill up the page horizontally in order to focus the attention better to call-to-actions, copy, and metrics.</li>
+        <li><b>Reprioritization of Information —</b> the removal of “Previous Loans” on the Savings page, removal of textual clutter, as well as the proper emphasis being placed on various UI elements to create more focus on what’s necessary.</li>
+      </ol>
+      <p>
+        <b>Before & After Shots:</b>
+      </p>
+      <img src="assets/projects/saveforward/p10.png" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <p style="text-align: center;"><b>Savings</b> Page</p>
+      <img src="assets/projects/saveforward/p11.png" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <p style="text-align: center;"><b>Dashboard</b> Page</p>
+      <img src="assets/projects/saveforward/p12.png" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <p style="text-align: center;"><b>Loans</b> Page</p>
+      <h3>Testimonial</h3>
+      <p>
+        <i>Tian is a pleasure to work with. He maintained a positive attitude and designed a beautiful prototype for us. He greatly improved our MVP, transforming it into a “minimum loveable product,” as he likes to call it. The app is complex and displays a lot of information on some screens. Tian created an entirely new design to make the information intuitive and user-friendly. He also helped us to test the design with users and made changes based on the feedback we received.
+          I’m impressed by Tian’s genuine passion for innovation and design. Although our project together is complete, he has continued to support us with advice, design support, and making valuable connections.</i>
+      </p>
+      <img src="assets/projects/saveforward/p13.png" style="width: 200px; padding: 0px; margin-left: 0px;display: block; max-width: 100%;" alt="">
+      <p>
+        Celyn Brown<br>
+        Cofounder & CEO,<br>
+        SaveForward
+      </p>
+
+    </div>
+    <a href="JavaScript:void(0)" name="Saveforward" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End Saveforward content -->
+
+  <!-- Hivewire content -->
+  <article id="Hivewire" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/hivewire.png" alt="Hivewire" style="width: 30%; margin-left: auto; margin-right: auto; display: block;">
+      <h1>Hivewire Re/Crowd</h1>
+      <h4><b>Case Study — Hivewire Re/Crowd</b></h4>
+      <h3><b>Time to Completion: 1 month</b></h3>
+      <h3>Context:</h3>
+      <ol>
+        <li>Hivewire is a 2+ year old digital agency that develops custom crowdfunding platforms that are specifically aligned with their client’s strategic objectives, and built to address their needs from the ground up.</li>
+        <li>Hivewire’s client for this particular project is a consortium of 30+ real-estate property investors based out of the Caribbean.</li>
+        <li>Hivewire’s team is distributed, remote, and has employed only 1 designer to work on this project — myself.</li>
+      </ol>
+      <h3>Content:</h3>
+      <h4>Problem:</h4>
+      <p>The client’s request, after being processed by Hivewire’s CEO was for a crowdfunding platform that would allow not only property developers to raise funds in a crowdsourced manner but property owners to do the same for lease or ownership. This would be an end-to-end platform as it would cover all stages of a real-estate project from 0 to 1. This product would end up being a white-label that could be used by any/all real-estate companies such as Re/Max. The name “Re/Crowd” is an unofficial name given by myself for the intent of clarity.</p>
+      <h4>Process:</h4>
+      <p>It covers everything from a UI, UX, and Heuristics Analysis of all the major existing competitors at the time. This was discussed with the CEO of Hivewire in consideration of the client’s requirements and was agreed upon before design work began.</p>
+      <p>Afterwards, I designed wireframes, mockups, and last-but-not-least a Marvel Prototype of the product. This was iterated upon with the CEO of Hivewire’s feedback in mind who himself had the consideration of the client in mind.</p>
+      <h4>Product:</h4>
+      <p><h4>Current Status:</h4> Ongoing — the client has taken the designs and is currently in the process of having it implemented.</p>
+    </div>
+    <a href="JavaScript:void(0)" name="Hivewire" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End Hivewire content -->
+
+  <!-- RotaractClubofToronto content -->
+  <article id="RotaractClubofToronto" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/rotaractClub.jpg" alt="RotaractClubofToronto" style="width: 70%; margin-left: auto; margin-right: auto; display: block;">
+      <h2>Rotaract Club of Toronto</h2>
+      <p>Upcoming Dinner & Learn!</p>
+      <p>
+        <b>Thursday, March 8th 7:30 - 8:30pm!</b>
+      </p>
+      <p>The name’s Tian and blockchain + product (UX/UI) design + social innovation/impact is his game.</p>
+      <p>Tian's foray into the realm of blockchain began when he met Vitalik Buterin in 2015 in Waterloo followed by befriending several industry leaders within the space such as William Mougayar as well as having worked at a few blockchain companies such as Cryptiv.</p>
+      <p>Currently working at Maropost where he is building out their Design System but on the side Tian's working with a blockchain-based social enterprise called Raise and will be teaching a course on product design + blockchain at The Blockchain Hub.</p>
+      <p>Outside of work Tian loves to perform, play video games, hang out with friends, and write.</p>
+    </div>
+    <a href="JavaScript:void(0)" name="RotaractClubofToronto" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End RotaractClubofToronto content -->
+
+  <!-- DCCPER content -->
+  <article id="DCCPER" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <img src="assets/images/DCCPER.png" alt="DCCPER" style="width: 30%; margin-left: auto; margin-right: auto; display: block;">
+      <h2>DCCPER</h2>
+      <p>I unable to find content for DCCPER.</p>
+    </div>
+    <a href="JavaScript:void(0)" name="DCCPER" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End DCCPER content -->
+
+  <!-- Etherisc & Niko content -->
+  <article id="Etherisc&Niko" class="overlay" aria-hidden="true" position="relative">
+    <a href="JavaScript:void(0)" style="position: absolute; right: 0; top: 0;" class="close-overlay" onclick="hideContent(this)"><i class="material-icons" style="font-size: 5em;">clear</i></a>
+    <div style="border-radius: 15px; color: black;">
+      <h2>Etherisc & Niko</h2>
+      <img src="assets/images/etheriscNiko.png" alt="Etherisc&Niko" style="width: 70%; margin-left: auto; margin-right: auto; display: block;">
+      <br>
+      <h3 style="text-align: center;">Etherisc full view</h3>
+      <hr>
+      <img src="assets/projects/etherisc/etherisc.png" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+      <br>
+      <h3 style="text-align: center;">Niko full view</h3>
+      <hr>
+      <img src="assets/projects/niko/niko.png" style="margin-left: auto; margin-right: auto; display: block; max-width: 100%;" alt="">
+    </div>
+    <a href="JavaScript:void(0)" name="Etherisc&Niko" style="position: fixed; bottom: 0; right: 0;" onclick="moveTop(this)"><i class="material-icons" style="font-size: 5em;">expand_less</i></a>
+  </article>
+  <!-- End Etherisc & Niko content -->
+
+  <script>
+    var blogs = ["Digital Product School (DPS)", "Your Financial Utility Belt — Pt. I", "Your Financial Utility Belt — Pt. II"];
+
+    // Filtering Cards
+    filterSelection("all");
+
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("filter");
+      for (i = 0; i < x.length; i++) {
+        removeClass(x[i], "show");
+        void x[i].offsetWidth;
+        if (x[i].className.indexOf(c) > -1 || c === 'all') addClass(x[i], "show");
+      }
+    }
+
+    function addClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+          element.className += " " + arr2[i];
+        }
+      }
+    }
+
+    function removeClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("work-nav");
+    var btns = btnContainer.getElementsByClassName("nav-link");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+    // End Filtering Cards
+
+    var body = document.body;
+
+    function displayContent(get) {
+      var name = get.getAttribute('name');
+      var content = document.getElementById(name);
+      body.classList.toggle('noscroll');
+      content.scrollTop = 0;
+      content.setAttribute('aria-hidden', false);
+    }
+
+    function hideContent(get) {
+      body.classList.toggle('noscroll');
+      var name = get.getAttribute('name');
+      var content = document.getElementsByClassName('overlay');
+      for (var i = 0; i < content.length; i++) {
+        content[i].setAttribute('aria-hidden', true);
+      }
+    }
+
+    function moveTop(get) {
+      var name = get.getAttribute('name');
+      var content = document.getElementById(name);
+      content.scrollTop = 0;
+    }
+  </script>
+  <!-- jQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  <script src="libraries/scripts/headerEffect.js"></script>
+  <script src="libraries/scripts/medium.js"></script>
+  <script src="libraries/scripts/master.js"></script>
+
+  <!-- p5 -->
+  <script src="libraries/p5/p5.js"></script>
+  <script src="libraries/p5/p5.dom.js"></script>
+  <script src="particle.js"></script>
+  <script src="sketch.js"></script>
 </body>
+
 </html>

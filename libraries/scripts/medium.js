@@ -22,7 +22,7 @@ $(function () {
           if (blogs.indexOf(items[i].title) > -1) {
 
             var item = items[i];
-
+            
             // Extracting image from medium
             var src = extractImage(item.description);
 

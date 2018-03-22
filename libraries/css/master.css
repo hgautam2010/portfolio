@@ -1,17 +1,18 @@
 /* Body setup */
 body {
+  overflow: auto;
+
   margin:0;
   padding:0;
-  overflow: auto;
 }
 /* End Body setup */
 
 /* Canvas setup */
 canvas {
   position: fixed;
-  left:0;
-  top:0;
   z-index:-1;
+  top:0;
+  left:0;
 }
 /* End Canvas setup */
 
@@ -40,17 +41,21 @@ canvas {
 /* End Blog */
 
 header {
-  background: white;
-  display: block;
   position: fixed;
-  left: 0;
   right: 0;
-  transition: top 0.2s ease-in-out;
+  left: 0;
+
+  display: block;
+
+  max-width: 321px;
   margin: auto;
   margin-top: 0;
+
+  transition: top 0.2s ease-in-out;
+
   border-radius: 0px 0px 15px 15px;
+  background: white;
   box-shadow: 0px 1px 3px grey;
-  max-width: 321px;
 }
 
 /* Not Active Links */
@@ -62,6 +67,7 @@ header {
 /* header menu */
 .menu {
    float: left;
+
    margin: 5px 10px 10px 10px;
 }
 /* End header menu */
@@ -71,30 +77,37 @@ header {
   position: relative;
   top: 45%;
   left: 50%;
+
   width: 50%;
-  transform: translate(-50%, -50%);
   min-width: 250px;
-  font-weight: 500;
+
+  transform: translate(-50%, -50%);
+
   color: black;
+
+  font-weight: 500;
 }
 /* End Tag line setup */
 
 #lead-down {
-  left: 0;
+  z-index: 10;
   right: 0;
+  bottom: 15px;
+  left: 0;
+
   width: 100%;
   height: 50%;
+
   text-align: center;
-  z-index: 10;
-  bottom: 15px;
+
   color: black;
 }
 
 .skill-logo, .contact-content {
-  padding-top: 20px;
   width: 90%;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
+  padding-top: 20px;
 }
 
 .logo {
@@ -106,26 +119,33 @@ header {
 
 #lead-down span {
   display: block;
-  margin:0 auto;
+
   width: 35px;
   height: 35px;
-  border-radius: 50%;
-  border:3px solid black;
+  margin:0 auto;
+
   text-align: center;
+
+  border:3px solid black;
+  border-radius: 50%;
 }
 
 #lead-down i {
-  color: black;
+  padding-top: 8px;
+
   animation: pulsate 1.5s ease;
   animation-iteration-count: infinite;
-  padding-top: 8px;
+
+  color: black;
 }
 
 #work, #skills, #about, #contact {
+  position: relative;
+
   width: 100%;
   height: auto;
+
   text-align: center;
-  position: relative;
 }
 
 #work-nav {
@@ -137,8 +157,9 @@ header {
 }
 
 .work-card-body {
-  text-align: left;
   height: 200px;
+
+  text-align: left;
 }
 
 .work-card-profile {
@@ -148,11 +169,12 @@ header {
 }
 
 .content-title {
-  font-size: 25px;
   width: 200px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+
+  font-size: 25px;
 }
 
 #work .animated {
@@ -165,27 +187,36 @@ header {
 
 #work .card-description {
   display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  text-shadow: 0px 0px 0px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: 500;
+  -webkit-box-orient: vertical;
+
+  height: auto;
+
   text-align: justify;
   text-overflow: ellipsis;
-  height: auto;
+  text-overflow: ellipsis;
+
+  text-shadow: 0px 0px 0px;
+
+  font-weight: 500;
+
+  -webkit-line-clamp: 4;
 }
 
 .card-title {
   /* Fallback for non-webkit */
   display: -webkit-box;
-  height: auto;
-  /* Number of lines */
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   overflow: hidden;
+  -webkit-box-orient: vertical;
+
+  height: auto;
+
   text-overflow: ellipsis;
+
   font-weight: 500;
+  /* Number of lines */
+
+  -webkit-line-clamp: 1;
 }
 
 
@@ -196,35 +227,38 @@ header {
 }
 
 /* Media Query for Navigation Bar */
+/*
+  TODO: Try to remove !important
+ */
 @media screen and (max-width: 768px) {
   #work-nav {
     width: 542.5px;
   }
 }
 @media screen and (max-width: 542.5px) {
-  #work-nav-link {
-    padding-left: 15px;
-    padding-right: 15px;
+  .work-nav-link {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
   }
   #work-nav {
     width: 442.5px;
   }
 }
 @media screen and (max-width: 442.5px) {
-  #work-nav-link {
-    padding-left: 10px;
-    padding-right: 10px;
+  .work-nav-link {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
   }
   #work-nav {
     width: 392.5px;
   }
 }
 @media screen and (max-width: 392.5px) {
-  #work-nav-link {
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+  .work-nav-link {
+    padding-top: 7px !important;
+    padding-right: 5px !important;
+    padding-bottom: 7px !important;
+    padding-left: 5px !important;
   }
   #work-nav {
     width: 342.5px;
@@ -236,10 +270,11 @@ header {
 .center-div
 {
   position: absolute;
-  margin: auto;
   top: 0;
   right: 0;
   left: 0;
+
+  margin: auto;
 }
 /* Center align div Ends */
 
@@ -248,9 +283,10 @@ div.gallery:hover {
     box-shadow: 1px solid grey;
 }
 .responsive {
-    padding: 10px 10px 10px;
     float: left;
+
     width: 24.99999%;
+    padding: 10px 10px 10px;
 }
 @media only screen and (max-width: 1150px){
     .responsive {
@@ -268,8 +304,79 @@ div.gallery:hover {
     }
 }
 .clearfix:after {
-    content: "";
     display: table;
     clear: both;
+
+    content: "";
 }
 /* Responsive cards Ends */
+
+
+
+/* To the body element */
+ .noscroll { overflow: hidden; }
+
+.overlay {
+  position: fixed;
+  top: 0; top: 0; bottom: 0;left: 0;
+
+  overflow-y: scroll;
+}
+
+[aria-hidden="true"] {
+  z-index: -1;
+
+  width: 100%;
+
+  transition: opacity 1s, z-index 0s 0.5s;
+
+  opacity: 0;
+}
+
+[aria-hidden="false"] {
+  z-index: 1;
+
+  width: 100%;
+
+  transition: opacity 0.5s;
+
+  opacity: 1;
+}
+
+/* this code is not strictly necessary: just to make this demo a bit pleasant */
+.overlay div {
+  width: 80%;
+  margin: 15vh auto;
+  margin-top: 5vh;
+  padding: 30px;
+
+  background: rgba(255,255,255, .95);
+}
+
+.overlay {
+  background: rgba(40,40,40, 0.9);
+}
+
+article p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+article div a {
+  color: #28666c;
+}
+
+article div a:hover {
+  color: black;
+}
+
+article div div img {
+  max-width: 100%;
+  margin: 10px;
+
+  vertical-align: middle;
+}
+
+article div img {
+  margin: 10px;
+}
