@@ -27,9 +27,6 @@ function draw()
 			if(map(1300 - dist, 0, 1300, -1500, 255) > 0)
 				p[i].lineWith(p[j].loc);
 		}
-		dist = sqrt((p[i].loc.x - mouseX)*(p[i].loc.x - mouseX) + (p[i].loc.y - mouseY)*(p[i].loc.y - mouseY));
-		if(map(1300 - dist, 0, 1300, -1500, 255) > 0)
-			p[i].lineWith(new createVector(mouseX, mouseY));
 		p[i].display();
 	}
 }
