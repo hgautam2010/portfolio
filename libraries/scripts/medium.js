@@ -17,11 +17,12 @@ $(function () {
         // Adding articles in work-cards
         var items = response.items;
         for (var i = 0; i < items.length; i++) {
+
           //If Blog in addable then add it
           if (blogs.indexOf(items[i].title) > -1) {
 
             var item = items[i];
-            // console.log(item.description);
+            
             // Extracting image from medium
             var src = extractImage(item.description);
 
