@@ -285,7 +285,6 @@ div.gallery:hover {
   opacity: 1;
 }
 
-/* this code is not strictly necessary: just to make this demo a bit pleasant */
 .overlay div {
   width: 80%;
   margin: 15vh auto;
