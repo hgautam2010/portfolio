@@ -222,46 +222,6 @@ header {
   100%{transform: scale(1, 1)}
 }
 
-/* Media Query for Navigation Bar */
-/*
-  TODO: Try to remove !important
- */
-@media screen and (max-width: 768px) {
-  #work-nav {
-    width: 542.5px;
-  }
-}
-@media screen and (max-width: 542.5px) {
-  .work-nav-link {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
-  }
-  #work-nav {
-    width: 442.5px;
-  }
-}
-@media screen and (max-width: 442.5px) {
-  .work-nav-link {
-    padding-right: 10px !important;
-    padding-left: 10px !important;
-  }
-  #work-nav {
-    width: 392.5px;
-  }
-}
-@media screen and (max-width: 392.5px) {
-  .work-nav-link {
-    padding-top: 7px !important;
-    padding-right: 5px !important;
-    padding-bottom: 7px !important;
-    padding-left: 5px !important;
-  }
-  #work-nav {
-    width: 342.5px;
-  }
-}
-/* Ends Media Query for Navigation Bar */
-
 /* Center align div */
 .center-div
 {
@@ -284,21 +244,7 @@ div.gallery:hover {
     width: 24.99999%;
     padding: 10px 10px 10px;
 }
-@media only screen and (max-width: 1150px){
-    .responsive {
-        width: 33.3%;
-    }
-}
-@media only screen and (max-width: 850px){
-    .responsive {
-        width: 50%;
-    }
-}
-@media only screen and (max-width: 550px){
-    .responsive {
-        width: 100%;
-    }
-}
+
 .clearfix:after {
     display: table;
     clear: both;
@@ -346,6 +292,8 @@ div.gallery:hover {
   margin-top: 5vh;
   padding: 30px;
 
+  color: black;
+  border-radius: 15px;
   background: rgba(255,255,255, .95);
 }
 
@@ -376,3 +324,73 @@ article div div img {
 article div img {
   margin: 10px;
 }
+
+/* Media Queres */
+/* Media Query for Navigation Bar */
+/*
+  TODO: Try to remove !important
+ */
+@media screen and (max-width: 768px) {
+  #work-nav {
+    width: 542.5px;
+  }
+}
+@media screen and (max-width: 542.5px) {
+  .work-nav-link {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+  }
+  #work-nav {
+    width: 442.5px;
+  }
+}
+@media screen and (max-width: 442.5px) {
+  .work-nav-link {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
+  #work-nav {
+    width: 392.5px;
+  }
+}
+@media screen and (max-width: 392.5px) {
+  .work-nav-link {
+    padding-top: 7px !important;
+    padding-right: 5px !important;
+    padding-bottom: 7px !important;
+    padding-left: 5px !important;
+  }
+  #work-nav {
+    width: 342.5px;
+  }
+}
+/* Ends Media Query for Navigation Bar */
+
+@media only screen and (max-width: 1150px){
+    .responsive {
+        width: 33.3%;
+    }
+}
+@media only screen and (max-width: 850px){
+    .responsive {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .responsive {
+        width: 100%;
+    }
+    .overlay div {
+      width: 100%;
+      margin: 0px;
+      padding: 30px;
+
+      border-radius: 0px;
+      background: rgba(255,255,255, 1);
+    }
+    .overlay {
+      background: rgba(255,255,255, 1);
+    }
+}
+/* End Media Queres */
