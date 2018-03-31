@@ -380,16 +380,18 @@ article div img {
     .responsive {
         width: 100%;
     }
-    .overlay div {
-      width: 100%;
-      margin: 0px;
-      padding: 30px;
+}
+@media only screen and (max-width: 750px){
+  .overlay div {
+    width: 100%;
+    margin: 0px;
+    padding: 30px;
 
-      border-radius: 0px;
-      background: rgba(255,255,255, 1);
-    }
-    .overlay {
-      background: rgba(255,255,255, 1);
-    }
+    border-radius: 0px;
+    background: rgba(255,255,255, 1);
+  }
+  .overlay {
+    background: rgba(255,255,255, 1);
+  }
 }
 /* End Media Queres */
