@@ -526,17 +526,21 @@
     <div class="row">
       <form action="address" method="post" style="width: 100%;" target="_blank">
         <div class="col-md-6 ml-auto mr-auto text-center">
-          <h3 class="title"><small>Or subscribe to newsletters</small></h3>
-          <form class="contact">
-            <div class="row">
+          <h3 class="title"><small>Or message me</small></h3>
+          <form class="contact" method="POST" action="https://formspree.io/hgautam2010@gmail.com">
+            <div class="column">
               <div class="col-md-6 ml-auto mr-auto">
                 <input type="text" class="form-control" style="font-size: 20px; font-weight: 500;" placeholder="Email">
+              </div>
+              <br>
+              <div class="col-md-6 ml-auto mr-auto">
+                <textarea class="form-control" style="font-size: 20px; font-weight: 500; height: 200px;" name="message" placeholder="Your message"></textarea>
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col-md-6 ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary btn-block btn-round">subscribe</button>
+                <button type="submit" class="btn btn-primary btn-block btn-round">send</button>
               </div>
             </div>
           </form>
