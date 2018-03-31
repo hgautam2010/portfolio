@@ -58,12 +58,6 @@ header {
   box-shadow: 0px 1px 3px grey;
 }
 
-/* Not Active Links */
-.not-active {
-
-}
-/* End Not Active Links */
-
 /* header menu */
 .menu {
    float: left;
@@ -328,7 +322,7 @@ div.gallery:hover {
 
   width: 100%;
 
-  transition: opacity 1s, z-index 0s 0.5s;
+  transition: opacity 1s, z-index 0s 1s;
 
   opacity: 0;
 }
