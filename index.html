@@ -55,7 +55,8 @@
   </script>
 </head>
 
-<body>
+<body id="particles-js">
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <!-- Header -->
   <header class="menu-container nav-down" style="font-size: 20px; z-index: 2;">
     <div>
@@ -89,7 +90,7 @@
   <!-- Recent/Helighted/TagLine Ends -->
 
   <!-- Lead Down -->
-  <div id="lead-down" style="height: 10vh; display: block;">
+  <div id="lead-down">
     <span>
 			<a href="#work">
         <i class="fa fa-arrow-down" style=""></i>
@@ -99,24 +100,24 @@
   <!-- Lead Down Ends -->
 
   <!-- Work -->
-  <div id="work" style="width: 100%; margin-left: auto; margin-right: auto;">
+  <div id="work" style="">
 
     <!-- Work Navigation -->
     <div class="fadeIn-on-scroll" style="position: relative; top: 0;right: 0;left: 0;height: 0;text-align: center;">
-      <ul id="work-nav" style="display: inline-block;" class="nav nav-pills nav-pills-info">
-        <li class="nav-item" style="display: inline-block; float: left;">
+      <ul id="work-nav" style="" class="nav nav-pills nav-pills-info">
+        <li class="nav-item" style="">
           <a onclick="filterSelection('all')" class="work-nav-link nav-link active" data-toggle="pill" href="#all" role="tab">All</a>
         </li>
-        <li class="nav-item" style="display: inline-block; float: left;">
+        <li class="nav-item">
           <a onclick="filterSelection('project')" class="work-nav-link nav-link" data-toggle="pill" href="#projects" role="tab">Projects</a>
         </li>
-        <li class="nav-item" style="display: inline-block; float: left;">
+        <li class="nav-item">
           <a onclick="filterSelection('side-hustle')" class="work-nav-link nav-link" data-toggle="pill" href="#side-hustles" role="tab">Side-Hustles</a>
         </li>
-        <li class="nav-item" style="display: inline-block;float: left;">
+        <li class="nav-item">
           <a onclick="filterSelection('presentation')" class="work-nav-link nav-link" data-toggle="pill" href="#Speaking-Gigs" role="tab">Speaking Gigs</a>
         </li>
-        <li class="nav-item" style="display: inline-block; float: left;">
+        <li class="nav-item">
           <a onclick="filterSelection('medium')" class="work-nav-link nav-link" data-toggle="pill" href="#Writings" role="tab">Writings</a>
         </li>
       </ul>
@@ -125,7 +126,7 @@
 
     <!-- Project category buttons -->
     <div id="project-category" class="" style="padding-top: 50px; display: none;">
-      <div class="col-md-2 dropdown fadeIn-on-scroll" style="display: inline-block;margin-left: auto; margin-right: auto; z-index: 2;">
+      <div class="col-md-2 dropdown fadeIn-on-scroll" style="display: inline-block; margin-left: auto; margin-right: auto; z-index: 1;">
         <button href="#" class=" dropdown-toggle btn btn-round btn-info btn-block" data-toggle="dropdown">Devices</button>
         <ul class="dropdown-menu dropdown-info" style="padding: 20px;">
           <div class="form-check">
@@ -151,7 +152,7 @@
           </div>
         </ul>
       </div>
-      <div class="col-md-2 dropdown fadeIn-on-scroll" style="display: inline-block;margin-left: auto; margin-right: auto; z-index: 2;">
+      <div class="col-md-2 dropdown fadeIn-on-scroll" style="display: inline-block;margin-left: auto; margin-right: auto; z-index: 1;">
         <button href="#" class=" dropdown-toggle btn btn-round btn-info btn-block" data-toggle="dropdown">Customers</button>
         <ul class="dropdown-menu dropdown-info" style="padding: 20px;">
           <div class="form-check">
@@ -188,7 +189,7 @@
     <!-- Project category buttons ends -->
 
     <!-- Work Cards -->
-    <div id="work-cards" class="row" style="width: 95%; min-height: 70vh; padding-top: 70px; margin-left: auto; margin-right: auto;">
+    <div id="work-cards" class="row">
 
       <!-- Cards -->
       <div class="col-sm-6 col-md-4 col-lg-3 work-card fadeIn-on-scroll filter side-hustle">
@@ -383,6 +384,9 @@
                 <p class="card-description">
                   I was a part-time product designer for Emerge.
                 </p>
+                <span class="label label-default">WEB</span>
+                <span class="label label-info">B2B</span>
+                <span class="label label-default">B2C</span>
               </div>
             </div>
           </a>
@@ -403,6 +407,10 @@
                 <p class="card-description">
                   I was a full-time interaction designer for Belt.
                 </p>
+                <span class="label label-primary">Social-Enterprise</span>
+                <span class="label label-success">For-Profits</span>
+                <span class="label label-default">WEB</span>
+                <span class="label label-primary">iOS</span>
               </div>
             </div>
           </a>
@@ -443,6 +451,9 @@
                 <p class="card-description">
                   I was a freelance product designer for Saveforward.
                 </p>
+                <span class="label label-success">Android</span>
+                <span class="label label-primary">Social-Enterprise</span>
+                <span class="label label-info">B2B</span>
               </div>
             </div>
           </a>
@@ -463,6 +474,10 @@
                 <p class="card-description">
                   I was a full-time product designer for Hivewire.
                 </p>
+                <span class="label label-default">WEB</span>
+                <span class="label label-primary">iOS</span>
+                <span class="label label-default">B2C</span>
+                <span class="label label-success">For-Profits</span>
               </div>
             </div>
           </a>
@@ -503,6 +518,8 @@
                 <p class="card-description">
                   I was a full-time associate product manager (internship/co-op) for DCCPER.
                 </p>
+                <span class="label label-success">Android</span>
+                <span class="label label-success">For-Profits</span>
               </div>
             </div>
           </a>
@@ -523,6 +540,9 @@
                 <p class="card-description">
                   The left one is a landing page redesign of the award-winning blockchain and insuritech company known as "Etherisc".
                 </p>
+                <span class="label label-success">Android</span>
+                <span class="label label-default">WEB</span>
+                <span class="label label-primary">Social-Enterprise</span>
               </div>
             </div>
           </a>
@@ -538,7 +558,7 @@
 
   <!-- Skill -->
   <div id="skills">
-    <div style="position: relative; top: 0;right: 0;left: 0;height: 0;text-align: center;" class="fadeIn-on-scroll">
+    <div class="fadeIn-on-scroll">
       <div class="label label-info text-center content-title">skills</div>
     </div>
     <!-- Dummy Div -->
@@ -574,7 +594,7 @@
     <!-- Dummy Div -->
     <div style="height: 80px;" class=""></div>
     <!-- Dummy Div End -->
-    <div class="hidden-sm hidden-md hidden-lg fadeIn-on-scroll" style="margin-top: 0px; width: 85%; border-radius: 15px; background-color: WHITE; margin-left:auto; margin-right: auto;">
+    <div id="map-container" class="hidden-sm hidden-md hidden-lg fadeIn-on-scroll">
       <div id="container">
         <h3>
           Travelling with a Purpose
@@ -616,7 +636,7 @@
   <!-- About Ends -->
 
   <!-- Contact -->
-  <div id="contact" class="contact" style="width: 100%; margin-bottom: 30px; font-size: 20px;">
+  <div id="contact" class="contact">
     <div class="fadeIn-on-scroll" style="position: relative; top: 0;right: 0;left: 0;height: 0;text-align: center;">
       <div class="label label-info text-center content-title">contact</div>
     </div>
@@ -1343,6 +1363,9 @@
     function filterSelection(c) {
       var x, i;
 
+      // TODO: just for quick fix, remove it
+      window.scrollBy(0, 1);
+
       //To show project category
       if (c == 'project') {
         projectCategory = [];
@@ -1463,7 +1486,7 @@
     var pageTop = $(document).scrollTop()
     var pageBottom = pageTop + $(window).height()
     var tags = $(".fadeIn-on-scroll")
-    console.log(tags);
+
     for (var i = 0; i < tags.length; i++) {
       var tag = tags[i]
 
@@ -1510,6 +1533,11 @@
           fillKey: 'HIGH',
           experiences: ['Lorem ipsum.', 'Lorem ipsum dolor.'],
           description: ['Lorem ipsum dolor sit amet.', 'Lorem ipsum dolor sit amet, consectetur adipisicing.']
+        },
+        CAN: {
+          fillKey: 'HIGH',
+          experiences: ['Lorem ipsum.', 'Lorem ipsum dolor.'],
+          description: ['Lorem ipsum dolor sit amet.', 'Lorem ipsum dolor sit amet, consectetur adipisicing.']
         }
       },
       geographyConfig: {
@@ -1541,10 +1569,10 @@
   <script src="libraries/scripts/master.js"></script>
 
   <!-- p5 -->
-  <script src="libraries/p5/p5.js"></script>
+  <!-- <script src="libraries/p5/p5.js"></script>
   <script src="libraries/p5/p5.dom.js"></script>
   <script src="particle.js"></script>
-  <script src="sketch.js"></script>
+  <script src="sketch.js"></script> -->
 
   <script src="libraries/paper/js/popper.js"></script>
   <script src="libraries/paper/js/bootstrap.min.js"></script>
