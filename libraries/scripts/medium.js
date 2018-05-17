@@ -22,7 +22,7 @@ $(function () {
           if (blogs.indexOf(items[i].title) > -1) {
 
             var item = items[i];
-            
+
             // Extracting image from medium
             var src = extractImage(item.description);
 
@@ -30,9 +30,8 @@ $(function () {
             var description = extractDescription(item.description);
 
             var node = document.createElement('div');
-            node.className += "animated zoomIn responsive filter medium show";
+            node.className += "col-sm-6 col-md-4 col-lg-3 work-card fadeIn-on-scroll filter medium show";
             node.innerHTML = `
-
             <!-- New Cards -->
              <div class="gallery">
               <a href="${item.link}" target="_blank">
@@ -61,8 +60,8 @@ $(function () {
         }
 
         // Adding Clearfix at the end
-        parent.innerHTML += `<!-- ClearFix -->
-        <div class="clearfix"></div>`;
+        // parent.innerHTML += `<!-- ClearFix -->
+        // <div class="clearfix"></div>`;
       }
     }
   });

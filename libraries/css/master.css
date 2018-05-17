@@ -1,3 +1,5 @@
+/* TODO: Setup project category button with media query or bootstrap. */
+
 /* Body setup */
 body {
   overflow: auto;
@@ -5,7 +7,7 @@ body {
   margin:0;
   padding:0;
 
-  background: rgb(255,252,244);
+  background: rgb(15, 7, 186);
 }
 /* End Body setup */
 
@@ -44,29 +46,26 @@ canvas {
 
 header {
   position: fixed;
+  top: 0;
   right: 0;
   left: 0;
 
-  display: block;
-
-  max-width: 321px;
-  margin: auto;
-  margin-top: 0;
+  height: 0;
 
   transition: top 0.2s ease-in-out;
+  text-align: center;
+}
+
+header > div {
+  display: inline-block;
+  /* min-width: 346px; */
+
+  padding: 5px;
 
   border-radius: 0px 0px 15px 15px;
   background: white;
   box-shadow: 0px 1px 3px grey;
 }
-
-/* header menu */
-.menu {
-   float: left;
-
-   margin: 5px 10px 10px 10px;
-}
-/* End header menu */
 
 /* Tag line setup */
 #tag-line {
@@ -99,20 +98,6 @@ header {
   color: black;
 }
 
-.skill-logo, .contact-content {
-  width: 90%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 20px;
-}
-
-.logo {
-  width: 120px;
-  height: 120px;
-  margin: 5px;
-  padding: 0px;
-}
-
 #lead-down span {
   display: block;
 
@@ -122,7 +107,7 @@ header {
 
   text-align: center;
 
-  border:3px solid black;
+  border:3px solid white;
   border-radius: 50%;
 }
 
@@ -132,28 +117,64 @@ header {
   animation: pulsate 1.5s ease;
   animation-iteration-count: infinite;
 
-  color: black;
+  color: white;
 }
 
-#work, #skills, #about, #contact {
-  position: relative;
+.contact-content {
+  width: 85%;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+}
 
+.skill-logo {
+  width: 85%;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+
+  border-radius: 15px;
+  background-color: white;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+  padding: 0px;
+}
+
+#work, #skills, #contact {
+  
   width: 100%;
   height: auto;
+  margin-top: 70px;
 
   text-align: center;
 }
 
+/* Due to map i have to split it from above style */
+#about {
+  margin-top: 70px;
+}
+
 #work-nav {
-   width: 590.5px;
+   border-radius: 50px;
+   background-color: white;
 }
 
 .card {
   width: 400px;
 }
 
+.work-card {
+  padding: 10px;
+}
+
 .work-card-body {
-  height: 200px;
+  min-height: 200px;
 
   text-align: left;
 }
@@ -165,10 +186,9 @@ header {
 }
 
 .content-title {
+  display: inline-block;
+
   width: 200px;
-  margin-top: 50px;
-  margin-right: auto;
-  margin-left: auto;
 
   font-size: 25px;
 }
@@ -200,7 +220,6 @@ header {
 }
 
 .card-title {
-  /* Fallback for non-webkit */
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -210,7 +229,6 @@ header {
   text-overflow: ellipsis;
 
   font-weight: 500;
-  /* Number of lines */
 
   -webkit-line-clamp: 1;
 }
@@ -222,38 +240,26 @@ header {
   100%{transform: scale(1, 1)}
 }
 
-/* Center align div */
-.center-div
-{
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-
-  margin: auto;
-}
-/* Center align div Ends */
-
 /* Responsive cards */
 div.gallery:hover {
     box-shadow: 1px solid grey;
 }
-.responsive {
-    float: left;
-
-    width: 24.99999%;
-    padding: 10px 10px 10px;
-}
-
-.clearfix:after {
-    display: table;
-    clear: both;
-
-    content: "";
-}
 /* Responsive cards Ends */
 
+.about-card-profile {width: 80%; margin-top: 90px; margin-right: auto;margin-left: auto;
 
+  background: white;
+}
+
+#container {
+  font-size: 1em;
+  position: relative; width: 95%; margin-left:auto; margin-right: auto;
+}
+
+#container > h3 {
+  font-size: 2em;
+  color: black; border-bottom: 2px solid black; position: absolute; margin-top: 1%;left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);
+}
 
 /* To the body element */
  .noscroll { overflow: hidden; }
@@ -324,61 +330,64 @@ article div img {
   margin: 10px;
 }
 
-/* Media Queres */
-/* Media Query for Navigation Bar */
-/*
-  TODO: Try to remove !important
- */
-@media screen and (max-width: 768px) {
-  #work-nav {
-    width: 542.5px;
-  }
-}
-@media screen and (max-width: 542.5px) {
+@media screen and (max-width: 543px) {
   .work-nav-link {
     padding-right: 15px !important;
     padding-left: 15px !important;
   }
-  #work-nav {
-    width: 442.5px;
-  }
 }
-@media screen and (max-width: 442.5px) {
+@media screen and (max-width: 447px) {
   .work-nav-link {
     padding-right: 10px !important;
     padding-left: 10px !important;
   }
-  #work-nav {
-    width: 392.5px;
-  }
 }
-@media screen and (max-width: 392.5px) {
+@media screen and (max-width: 397px) {
   .work-nav-link {
     padding-top: 7px !important;
     padding-right: 5px !important;
     padding-bottom: 7px !important;
     padding-left: 5px !important;
   }
-  #work-nav {
-    width: 342.5px;
-  }
 }
 /* Ends Media Query for Navigation Bar */
 
 @media only screen and (max-width: 1150px){
-    .responsive {
-        width: 33.3%;
+    #container {
+      font-size: 0.8em;
     }
-}
-@media only screen and (max-width: 850px){
-    .responsive {
-        width: 50%;
+
+    #container > h3 {
+      font-size: 2em;
     }
 }
 
-@media only screen and (max-width: 550px){
-    .responsive {
-        width: 100%;
+@media only screen and (max-width: 950px){
+    #container {
+      font-size: 0.7em;
+    }
+
+    #container > h3 {
+      font-size: 1.8em;
+    }
+}
+
+@media only screen and (max-width: 840px){
+    #container {
+      font-size: 0.6em;
+    }
+
+    #container > h3 {
+      font-size: 1.6em;
+    }
+}
+
+@media only screen and (max-width: 775px){
+    #container {
+      display: none;
+    }
+    .about-card-profile {
+      margin-top: 130px;
     }
 }
 @media only screen and (max-width: 750px){
