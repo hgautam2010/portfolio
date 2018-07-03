@@ -30,7 +30,7 @@ $(function () {
             var description = extractDescription(item.description);
 
             var node = document.createElement('div');
-            node.className += "col-sm-6 col-md-4 col-lg-3 work-card fadeIn-on-scroll filter medium show";
+            node.className += "col-sm-6 col-md-4 col-lg-3 work-card fadeIn-on-scroll filter writings show";
             node.innerHTML = `
             <!-- New Cards -->
              <div class="gallery">
